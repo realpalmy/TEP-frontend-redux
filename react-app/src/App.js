@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductCard from './features/ProductCard';
 
 function App() {
+  const imgUrl = "";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div class="container">
+        <div class="row text-start">
+        <img className="rounded float-start" src={imgUrl} alt="" />
+          <h2 class="col">Car</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <ProductCard></ProductCard>
+        </div>
+      </div>
+    </>
   );
 }
 
