@@ -77,8 +77,13 @@ nav {
 }
 
 .bg-4E598C {
-    border: 2px solid rgba(255, 255, 255, 0);
+    border: 0px solid rgba(255, 255, 255, 0);
     background-image: linear-gradient(to bottom, #00509d, #1962b0, #2a74c4, #3987d7, #479aeb);
+}
+
+.bg-4E598C:hover {
+    border: 0px solid rgba(255, 255, 255, 0);
+    background-image: linear-gradient(to top, #00509d, #1962b0, #2a74c4, #3987d7, #479aeb);
 }
 
 .img-content {
@@ -148,7 +153,7 @@ nav {
 }
 
 .footer-basic .social>a {
-    font-size: 24px;
+    font-size: 30px;
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -163,4 +168,36 @@ nav {
 
 .footer-basic .social>a:hover {
     opacity: 0.9;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    color: #ffffff;
+    background-color: #ff8c42;
+}
+
+.card-img-left {
+    width: 45%;
+    background: linear-gradient(to bottom, #ff8c42, #fd9c50, #fab06b, #f9d0a2, #f8e2c5);
+    background-size: cover;
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.btn-google {
+    color: white !important;
+    background-color: #ea4335;
+}
+
+.btn-facebook {
+    color: white !important;
+    background-color: #3b5998;
+}
+
+.login {
+    margin-top: -30rem;
 }

@@ -14,7 +14,19 @@ export default function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 dropshadow fs-5">
                         <li class="nav-item"><a class="nav-link text-white" href="#about">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="#services">Aution</a></li>
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Auction
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-primary">
+                                    <li><a class="dropdown-item" href="#">VEHICLES</a></li>
+                                    <li><a class="dropdown-item" href="#">WATCHES</a></li>
+                                    <li><a class="dropdown-item" href="#">ELECTRONICS</a></li>
+                                    <li><a class="dropdown-item" href="#">JEWELRY</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                         <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Watchlist</a></li>
                     </ul>
                 </div>
@@ -23,6 +35,7 @@ export default function Navbar() {
                 <input class="form-control remove-bg x rounded-pill" type="text" placeholder="Search any product..." />
                 <i class="bi bi-search m-2 me-3 text-white"></i>
             </form>
+            <a class="nav-link text-white" href="https://www.google.com/"> <i class="bi bi-person-bounding-box ms-5 fs-1 text-white"></i></a>
         </nav>
     );
 }
