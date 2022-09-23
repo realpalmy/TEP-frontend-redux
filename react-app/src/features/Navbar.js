@@ -17,7 +17,6 @@ export default function Navbar() {
                         <li class="nav-item"><a class="nav-link text-white" href="#services">Aution</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Watchlist</a></li>
                     </ul>
-
                 </div>
             </div>
             <form class="input-group rounded-pill x">
