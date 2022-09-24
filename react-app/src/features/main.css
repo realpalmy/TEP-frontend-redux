@@ -56,6 +56,11 @@ nav {
     background: #ff8c42;
 }
 
+.logo {
+    margin-top: -0.8rem;
+    width: 3.5rem;
+}
+
 .text-96 {
     font-weight: 400;
     font-size: 70px;

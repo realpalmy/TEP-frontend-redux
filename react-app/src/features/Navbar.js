@@ -5,6 +5,9 @@ export default function Navbar() {
     return (
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 col-12" id="mainNav">
             <div class="container px-4 px-lg-5">
+                <div class="me-1">
+                    <img src="./image/bid-shadow.png" class="logo" alt="..." />
+                </div>
                 <div class="d-flex">
                     <a class="navbar-brand fs-3 text-white dropshadow" href="#page-top">TEP AUCTION </a>
                 </div>
@@ -33,7 +36,7 @@ export default function Navbar() {
             </div>
             <form class="input-group rounded-pill x">
                 <input class="form-control remove-bg x rounded-pill" type="text" placeholder="Search any product..." />
-                <i class="bi bi-search m-2 me-3 text-white"></i>
+                <i class="bi bi-search m-2 me-3 text-white text-shadow"></i>
             </form>
             <a class="nav-link text-white" href="https://www.google.com/"> <i class="bi bi-person-bounding-box ms-5 fs-1 text-white"></i></a>
         </nav>
