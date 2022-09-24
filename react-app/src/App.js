@@ -1,11 +1,22 @@
-import './App.css';
-import Home from './features/Home';
+import React, { Fragment } from 'react';
+import Navbar from './features/Navbar';
+import ContainerNavbar from './features/ContainerNavbar';
+import SectionOne from './features/SectionOne';
+import Category from './features/Category';
+import Footer from './features/Footer';
+import Login from './features/Login';
+
 
 function App() {
   return (
-    <>
-      <Home></Home>
-    </>
+    <Fragment>
+      <ContainerNavbar>
+        <Navbar />
+        <SectionOne />
+      </ContainerNavbar>
+      <Category />
+      <Footer />
+    </Fragment >
   );
 }
 
