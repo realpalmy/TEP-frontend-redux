@@ -5,6 +5,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Kanit', sans-serif;
 }
 
+body{
+    background: #F5F5F5;
+}
+
 .header {
     background: linear-gradient(to bottom, #ff8c42, #fd9c50, #fab06b, #f9d0a2, #f8e2c5);
     height: 55rem;

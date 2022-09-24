@@ -4,8 +4,7 @@ import ContainerNavbar from '../components/ContainerNavbar';
 import SectionOne from '../components/SectionOne';
 import Category from '../components/Category';
 import Footer from '../components/Footer';
-import Login from '../components/Login';
-import { Links } from 'react-router-dom';
+import Products from '../components/Products';
 
 
 function Home() {
@@ -16,6 +15,7 @@ function Home() {
                 <SectionOne />
             </ContainerNavbar>
             <Category />
+            <Products />
             <Footer />
         </Fragment >
     );

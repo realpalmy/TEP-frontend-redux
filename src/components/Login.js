@@ -9,7 +9,7 @@ export default function Login() {
 
                         <div className="d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
                             <div>
-                                <img src="./22.png" style={{ width: '100%' }} />
+                                <img src="./22.png" style={{ width: '100%' }} alt="..." />
                                 <div class="text-center fs-2 dropshadow text-white">what's your it's your !!!</div>
                             </div>
                         </div>
@@ -35,10 +35,9 @@ export default function Login() {
                                 <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">LOGIN</button>
                             </div>
 
-                            <a class="d-block text-center mt-2 small" href="#">Don't have an account? Sign Up</a>
+                            <a class="d-block text-center mt-2 small">Don't have an account? Sign Up</a>
 
                             <hr className="my-4" />
-
 
                             <div class="d-grid mb-2">
                                 <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
