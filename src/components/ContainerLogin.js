@@ -1,5 +1,4 @@
 import React from 'react';
-import "./main.css";
 
 export function ContainerLogin({ children }) {
     return (
