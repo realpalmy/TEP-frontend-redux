@@ -1,13 +1,17 @@
 import React, { Fragment } from 'react';
-import StartPages from './components/StartPages';
+import Home from './pages/Home';
+import LoginPages from './pages/LoginPages';
 import { Routes, Route } from 'react-router-dom';
+import GlobalStyle from './components/GlobalStyle';
 
 
 function App() {
   return (
     <Fragment>
+      <GlobalStyle />
       <Routes>
-        <Route path="/" element={<StartPages />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/LoginPages" element={<LoginPages />} />
       </Routes>
     </Fragment >
   );

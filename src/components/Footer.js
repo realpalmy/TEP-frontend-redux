@@ -1,9 +1,9 @@
 import React from 'react';
-import "./main.css";
+import styled from 'styled-components';
 
-export default function Footer() {
+export function Footer({ className }) {
     return (
-        <div>
+        <div className={className}>
             <div class="footer-basic">
                 <footer>
                     <div class="social">
@@ -20,3 +20,60 @@ export default function Footer() {
         </div>
     );
 }
+
+export default styled(Footer)`
+.footer-basic {
+    margin-top: 9rem;
+    background: linear-gradient(to top, #f69e67, #f5a263, #f6bc86, #f9d0a2, #f8e2c5);
+    height: 10rem;
+    border-radius: 200px 200px 0px 0px;
+    padding: 40px 0 50px;
+    color: #ffffff;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .social {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.footer-basic .social>a {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    margin: 0 8px;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.footer-basic .social>a:hover {
+    opacity: 0.9;
+}
+`;

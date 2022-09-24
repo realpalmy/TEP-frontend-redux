@@ -1,10 +1,10 @@
 import ProductCard from "./ProductCard";
 import React, { useState, useEffect } from 'react';
-import data from "../app/product_data";
+import data from "../app/productData";
 
 
-function Home() {
-    const [products, setProducts] = useState(data); 
+function Products() {
+    const [products, setProducts] = useState(data);
     console.log(products)
 
     /*
@@ -20,23 +20,23 @@ function Home() {
             <div className="container">
                 <div className="row text-start">
                     <img className="rounded float-start" src={"./"} alt="" />
-                <h2 className="col">Car</h2>
+                    <h2 className="col">Car</h2>
                 </div>
                 {
                     products.length > 0 ? (
                         <div className="row row-cols-1 row-cols-md-3 g-4">
-                        {products.map((product) => (
-                            <ProductCard product={product}/>
-                        ))}
+                            {products.map((product) => (
+                                <ProductCard product={product} />
+                            ))}
                         </div>
                     ) : (
                         <div>Loading products....</div>
                     )
                 }
-                
+
             </div>
         </>
     );
 }
 
-export default Home;
+export default Products;
