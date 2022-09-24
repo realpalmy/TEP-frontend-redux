@@ -8,7 +8,6 @@ function ProductCard({ product }) {
     return (
         <Fragment>
             <div class="card" style={{ width: "18rem" }}>
-                <img src="./logo192.png" class="card-img-top" alt="..." />
                 <div class="col">
                     <div class="card" style={{ width: "18rem" }}>
                         <div class="card-body" style={{ height: "17rem" }}>

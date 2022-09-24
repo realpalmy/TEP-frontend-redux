@@ -6,6 +6,7 @@ import Category from './features/Category';
 import Footer from './features/Footer';
 import Login from './features/Login';
 import ProductCard from './features/ProductCard';
+import Home from './features/Home';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <SectionOne />
       </ContainerNavbar>
       <Category />
+      <Home />
       <Footer />
     </Fragment >
   );
