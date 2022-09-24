@@ -38,7 +38,9 @@ export default function Navbar() {
                 <input class="form-control remove-bg x rounded-pill" type="text" placeholder="Search any product..." />
                 <i class="bi bi-search m-2 me-3 text-white text-shadow"></i>
             </form>
-            <a class="nav-link text-white" href="https://www.google.com/"> <i class="bi bi-person-bounding-box ms-5 fs-1 text-white"></i></a>
-        </nav>
+            <i class="bi bi-person-bounding-box ms-5 fs-1 text-white">
+
+            </i>
+        </nav >
     );
 }
