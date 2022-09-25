@@ -7,50 +7,50 @@ import { MdAttachMoney } from "react-icons/md";
 function ProductCard({ product }) {
     return (
         <>
-            <div class="col">
-                <div class="shadow card" style={{ width: "20rem" }}>
-                    <div class="card-body" style={{ height: "18rem" }}>
+            <div className="col">
+                <div className="shadow card" style={{ width: "20rem" }}>
+                    <div className="card-body" style={{ height: "18rem" }}>
                         <img className='rounded float-center img-fluid' style={{ width: '100%', height: '100%' }} src={product.imgUrl} alt="..." />
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{product.title}</h5>
+                    <div className="card-body">
+                        <h5 className="card-title">{product.title}</h5>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-2 d-flex align-items-center">
-                                    <div class="text-success"><GiTakeMyMoney size={25} /></div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
+                            <div className="row">
+                                <div className="col-2 d-flex align-items-center">
+                                    <div className="text-success"><GiTakeMyMoney size={25} /></div>
                                 </div>
-                                <div class="col-4 border-end">
-                                    <div class="row">
-                                        <div class="text-10 text-success">CurrentBid</div>
+                                <div className="col-4 border-end">
+                                    <div className="row">
+                                        <div className="text-10 text-success">CurrentBid</div>
                                         <div>${product.currentBid}</div>
                                     </div>
                                 </div>
-                                <div class="col-2 d-flex align-items-center">
-                                    <div class="text-danger"><MdAttachMoney size={25} /></div>
+                                <div className="col-2 d-flex align-items-center">
+                                    <div className="text-danger"><MdAttachMoney size={25} /></div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="row">
-                                        <div class="text-10 text-danger">Buynow</div>
+                                <div className="col-4">
+                                    <div className="row">
+                                        <div className="text-10 text-danger">Buynow</div>
                                         <div>${product.buyNow}</div>
                                     </div>
                                 </div>
                             </div>
                         </li>
 
-                        <li class="list-group-item">
+                        <li className="list-group-item">
                             <div className="row">
-                                <div class="col-8 border-end text-center text-danger">{product.countDown}</div>
-                                <div class="col-4 text-center text-success">{product.bitAmount} bid(s)</div>
+                                <div className="col-8 border-end text-center text-danger">{product.countDown}</div>
+                                <div className="col-4 text-center text-success">{product.bitAmount} bid(s)</div>
                             </div>
                         </li>
 
                     </ul>
 
-                    <div class="card-body d-grid gap-2 col-lg-8 mx-auto text-center">
-                        <button class="btn btn-primary rounded-pill bg-gradient" type="button">
-                            <a href={"./"} class="text-decoration-none text-light">Submit A Bid</a>
+                    <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center">
+                        <button className="btn btn-primary rounded-pill bg-gradient" type="button">
+                            <a href={"./"} className="text-decoration-none text-light">Submit A Bid</a>
                         </button>
                     </div>
 

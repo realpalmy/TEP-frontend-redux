@@ -83,6 +83,10 @@ header.masthead {
 .login {
     margin-top: -30rem;
 }
+
+.watchlist {
+    margin-top: -45rem;
+}
 `;
 
 export default GlobalStyle;
