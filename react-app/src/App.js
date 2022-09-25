@@ -5,6 +5,7 @@ import SectionOne from './features/SectionOne';
 import Category from './features/Category';
 import Footer from './features/Footer';
 import Login from './features/Login';
+import Bid from './features/Bid';
 
 
 function App() {
@@ -12,10 +13,12 @@ function App() {
     <Fragment>
       <ContainerNavbar>
         <Navbar />
-        <SectionOne />
+        {/* <SectionOne /> */}
+        <Bid/>
       </ContainerNavbar>
-      <Category />
-      <Footer />
+      
+      {/* <Category /> */}
+      {/* <Footer /> */}
     </Fragment >
   );
 }
