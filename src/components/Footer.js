@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 export function Footer({ className }) {
+
+
     return (
         <div className={className}>
             <div class="footer-basic">
