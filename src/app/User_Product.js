@@ -1,7 +1,7 @@
 const user_product = [
     {
-        id: 0,
-        productID: "",
-        userID: ""
+        id: 1,
+        productID: 1,
+        userID: 1
     }
 ]
