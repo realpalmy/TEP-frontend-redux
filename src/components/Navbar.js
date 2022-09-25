@@ -33,14 +33,22 @@ function Navbar({ className }) {
                                         Auction
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary">
-                                        <li><a class="dropdown-item" href="#">VEHICLES</a></li>
+                                        <li>
+                                            <Link to="/OnProducts" class="text-decoration dropdown-item">
+                                                VEHICLES
+                                            </Link>
+                                        </li>
                                         <li><a class="dropdown-item" href="#">WATCHES</a></li>
                                         <li><a class="dropdown-item" href="#">ELECTRONICS</a></li>
                                         <li><a class="dropdown-item" href="#">JEWELRY</a></li>
                                     </ul>
                                 </li>
                             </ul>
-                            <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Watchlist</a></li>
+                            <li class="nav-item"><a class="nav-link text-white">
+                                <Link to="/WatchList" class="text-white text-decoration">
+                                    WatchList
+                                </Link>
+                            </a></li>
                         </ul>
                     </div>
                 </div>
@@ -110,4 +118,5 @@ nav {
 .text-decoration{
     text-decoration: none;
 }
+
 `;

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
-export function Footer({ className }) {
-
-
+export function Footer({ className }, { position }) {
+    const [marginFooter, setmarginFooter] = useState();
+    if (position == 'Home') {
+        setmarginFooter = 9;
+    }
+    console.log("asd");
     return (
         <div className={className}>
             <div class="footer-basic">

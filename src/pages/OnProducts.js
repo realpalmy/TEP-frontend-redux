@@ -1,24 +1,22 @@
 import React, { Fragment } from 'react';
 import Navbar from '../components/Navbar';
 import ContainerNavbar from '../components/ContainerNavbar';
-import SectionOne from '../components/SectionOne';
-import Category from '../components/Category';
 import Footer from '../components/Footer';
+import HeadOnPeoduct from '../components/HeadOnPeoduct';
 import Products from '../components/ShowProducts';
 
 
-function Home() {
+function OnProducts() {
     return (
         <Fragment>
             <ContainerNavbar>
                 <Navbar />
-                <SectionOne />
+                <HeadOnPeoduct />
             </ContainerNavbar>
-            <Category />
             <Products />
-            <Footer position="Home" />
+            <Footer />
         </Fragment >
     );
 }
 
-export default Home;
+export default OnProducts;
