@@ -59,6 +59,7 @@ export default styled(Products)`
     margin-top:10rem;
 }
 .viewAll:hover {
+    color:white;
     background: linear-gradient(to bottom, #ff8c42, #fd9c50, #fab06b, #f9d0a2, #f8e2c5);
 }
 `;
