@@ -19,9 +19,22 @@ export function Products({ className }) {
             <div className={className}>
                 <div className="container top">
                     <div className="row text-start mb-2">
-                        <img className="rounded float-start" src={"./image/01.png"} style={{ "width": "6rem" }} alt="" />
-                        <h2 className="col dropshadow">Vehicles</h2>
-                        <p class="mt-2 text-muted">We offer affordable Vehicles</p>
+                        <div class="d-flex">
+                            <div class="me-auto d-flex">
+                                <img className="rounded float-start" src={"./image/01.png"} style={{ "width": "6rem" }} alt="" />
+                                <h2 className="col dropshadow ms-2 mt-2">Vehicles</h2>
+                            </div>
+                        </div>
+
+                        <div class="d-flex">
+                            <div class="me-auto"><p class="mt-2 text-muted">We offer affordable Vehicles</p></div>
+                            <div class="p-2">
+                                <button class="btn viewAll fs-5 dropshadow rounded-pill border" type="submit">
+                                    View All
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                     {
                         products.length > 0 ? (
@@ -44,5 +57,8 @@ export function Products({ className }) {
 export default styled(Products)`
 .top{
     margin-top:10rem;
+}
+.viewAll:hover {
+    background: linear-gradient(to bottom, #ff8c42, #fd9c50, #fab06b, #f9d0a2, #f8e2c5);
 }
 `;

@@ -4,7 +4,7 @@ import ContainerNavbar from '../components/ContainerNavbar';
 import SectionOne from '../components/SectionOne';
 import Category from '../components/Category';
 import Footer from '../components/Footer';
-import Products from '../components/Products';
+import Products from '../components/ShowProducts';
 
 
 function Home() {
