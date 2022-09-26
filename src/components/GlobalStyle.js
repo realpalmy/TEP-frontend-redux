@@ -72,8 +72,22 @@ header.masthead {
     margin-top: -30rem;
 }
 
-.watchlist {
-    margin-top: -25rem;
+.margin-top-25rem {
+    margin-top: -27rem;
+}
+
+.bg-4E598C {
+    border: 0px solid rgba(255, 255, 255, 0);
+    background-image: linear-gradient(to bottom, #00509d, #1962b0, #2a74c4, #3987d7, #479aeb);
+}
+
+.bg-4E598C:hover {
+    border: 0px solid rgba(255, 255, 255, 0);
+    background-image: linear-gradient(to top, #00509d, #1962b0, #2a74c4, #3987d7, #479aeb);
+}
+
+.bg-productHome{
+    background-image: linear-gradient(to bottom, #F5F5F5, #fee1c6, #ffc697, #ffaa6b, #ff8c42);
 }
 `;
 

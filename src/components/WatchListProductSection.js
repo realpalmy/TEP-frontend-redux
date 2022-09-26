@@ -16,13 +16,13 @@ function WatchListProductSection() {
     ];
     return (
         <>
-        <div className="d-flex justify-content-center watchlist">
-            <div className="row g-0 d-flex justify-content-center bg-light rounded-5 col-10 py-5 px-4">
-                <h2 className="pb-2">Watch List</h2>
-                <WatchListCard item={products[0]} />
-                <WatchListCard item={products[1]} />
+            <div className="d-flex justify-content-center margin-top-25rem">
+                <div className="row g-0 d-flex justify-content-center bg-light rounded-5 col-10 py-5 px-4">
+                    <h2 className="pb-2 dropshadow">Watch List</h2>
+                    <WatchListCard item={products[0]} />
+                    <WatchListCard item={products[1]} />
+                </div>
             </div>
-        </div>
         </>
     );
 }

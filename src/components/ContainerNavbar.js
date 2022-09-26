@@ -4,7 +4,10 @@ import styled from 'styled-components';
 export function ContainerNavbar({ children, className, position }) {
     return (
         <div className={className}>
-            <div class={`${position == 'Home' ? 'bg-orange home' : 'bg-orange other-page'}`}>{children}</div>
+            <div></div>
+            <div class={`${position == 'Home' ? 'bg-orange home' : 'bg-orange other-page'}`}>
+                {children}
+            </div>
         </div>
     );
 }

@@ -5,26 +5,26 @@ export default function bid() {
     return (
         <header class="container-fluid masthead">
             <div class="d-flex justify-content-center col-12 row mt-5">
-                <div id="card-box" class="card rounded-5" style={{width:"60rem"}}>
-                        <img src="./image/01.png" class="size-img-bid" alt="..." />
+                <div id="card-box" class="card rounded-5" style={{ width: "60rem" }}>
+                    <img src="./image/01.png" class="size-img-bid" alt="..." />
                 </div>
             </div>
-           {/* show detail product */}
+            {/* show detail product */}
             <div class="p-5">
                 <div class="d-flex justify-content-center col-12 row ">
-                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{width:"10rem" ,height:"10rem"}}>
+                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{ width: "10rem", height: "10rem" }}>
                         <img src="./image/02.png" class="show-img-bid" alt="..." />
                     </div>
-                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{width:"10rem" ,height:"10rem"}}>
+                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{ width: "10rem", height: "10rem" }}>
                         <img src="./image/search-icon.png" class="show-img-bid" alt="..." />
                     </div>
-                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{width:"10rem" ,height:"10rem"}}>
+                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{ width: "10rem", height: "10rem" }}>
                         <img src="./image/04.png" class="show-img-bid" alt="..." />
                     </div>
-                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{width:"10rem" ,height:"10rem"}}>
+                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{ width: "10rem", height: "10rem" }}>
                         <img src="./image/05.png" class="show-img-bid" alt="..." />
                     </div>
-                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{width:"10rem" ,height:"10rem"}}>
+                    <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{ width: "10rem", height: "10rem" }}>
                         <img src="./image/06.png" class="show-img-bid" alt="..." />
                     </div>
                 </div>
@@ -40,28 +40,28 @@ export default function bid() {
                             </ul>
                         </div>
                         <ul class="show-price mb-4">
-                            <div class="product-detail d-flex " style={{display: 'flex'}}>
-                                    <h5>Current Price</h5>
-                                    <h2 class="text-danger">$123.45</h2>
-                                
+                            <div class="product-detail d-flex " style={{ display: 'flex' }}>
+                                <h5>Current Price</h5>
+                                <h2 class="text-danger">$123.45</h2>
+
                             </div>
-                            <div class="product-detail d-flex " style={{display: 'flex'}}>
-                                    <h5>Bid Increment (US) </h5>
-                                    <h2>$50.00</h2>
-                                
+                            <div class="product-detail d-flex " style={{ display: 'flex' }}>
+                                <h5>Bid Increment (US) </h5>
+                                <h2>$50.00</h2>
+
                             </div>
                         </ul>
                         <div class="bid-area">
                             <form class="input-group rounded-pill ">
                                 <div class="search-icon">
-                                    <img src="./image/search-icon.png" alt="..." style={{width:"3rem",height:"3rem"}} />
+                                    <img src="./image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
                                 </div>
-                                <input class="form-control rounded-pill p-2 mx-3 text-secondary"type="text" placeholder="Enter your bid amount..."></input>
+                                <input class="form-control rounded-pill p-2 mx-3 text-secondary" type="text" placeholder="Enter your bid amount..."></input>
                                 <button type="button" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3">Submit A Bid</button>
                             </form>
                         </div>
                     </div>
-                
+
                 </div>
                 <div class="g-5 show-time col-lg-3 ">
                     <h6 class="">This Auction Ends in:</h6>
@@ -90,8 +90,9 @@ export default function bid() {
 
                 </div>
             </div>
-            
+
         </header>
-        
+
     );
 }
+

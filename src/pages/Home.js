@@ -16,6 +16,7 @@ function Home() {
             </ContainerNavbar>
             <Category />
             <Products />
+            <Products showbg="Show" />
             <Footer position="Home" />
         </Fragment >
     );

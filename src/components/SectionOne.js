@@ -40,16 +40,4 @@ export default styled(SectionOne)`
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.bg-4E598C {
-    border: 0px solid rgba(255, 255, 255, 0);
-    background-image: linear-gradient(to bottom, #00509d, #1962b0, #2a74c4, #3987d7, #479aeb);
-}
-
-.bg-4E598C:hover {
-    border: 0px solid rgba(255, 255, 255, 0);
-    background-image: linear-gradient(to top, #00509d, #1962b0, #2a74c4, #3987d7, #479aeb);
-}
-
-
-
 `;

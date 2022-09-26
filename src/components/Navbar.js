@@ -14,7 +14,7 @@ function Navbar({ className }) {
                             </div>
                         </div>
                     </Link>
-                    <Link to="/" class="fs-3 text-white dropshadow text-decoration">
+                    <Link to="/DetailProduct" class="fs-3 text-white dropshadow text-decoration">
                         TEP AUCTION
                     </Link>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
@@ -49,6 +49,18 @@ function Navbar({ className }) {
                                     WatchList
                                 </Link>
                             </a></li>
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        My TEP
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-primary">
+                                        <li><a class="dropdown-item" href="#">Bid/Offers</a></li>
+                                        <li><a class="dropdown-item" href="#">Selling</a></li>
+                                        <li><a class="dropdown-item" href="#">Your Selling</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </ul>
                     </div>
                 </div>

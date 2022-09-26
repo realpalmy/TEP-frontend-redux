@@ -9,7 +9,7 @@ function ProductCard({ product }) {
         <>
             <div className="col">
                 <div className="shadow card" style={{ width: "20rem" }}>
-                    <div className="card-body" style={{ height: "18rem" }}>
+                    <div className="card-body" style={{ height: "15rem" }}>
                         <img className='rounded float-center img-fluid' style={{ width: '100%', height: '100%' }} src={product.imgUrl} alt="..." />
                     </div>
                     <div className="card-body">
