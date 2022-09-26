@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Navbar from '../components/Navbar';
-import ContainerLogin from '../components/ContainerLogin';
+import ContainerNavbar from '../components/ContainerNavbar';
 import Login from '../components/Login';
 import Footer from '../components/Footer';
 
@@ -9,11 +9,11 @@ import Footer from '../components/Footer';
 function LoginPages() {
     return (
         <Fragment>
-            <ContainerLogin>
+            <ContainerNavbar position="Login">
                 <Navbar />
-            </ContainerLogin>
+            </ContainerNavbar>
             <Login />
-            <Footer />
+            <Footer position="Login" />
         </Fragment >
     );
 }

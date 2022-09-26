@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
-export function Footer({ className }, { position }) {
-    const [marginFooter, setmarginFooter] = useState();
-    if (position == 'Home') {
-        setmarginFooter = 9;
-    }
-    console.log("asd");
+export function Footer({ className, position }) {
+    console.log(position);
     return (
         <div className={className}>
-            <div class="footer-basic">
+            <div class={`${position == 'Home' ? 'footer-basic Home' : position == 'Login' ? 'footer-basic Login' : 'footer-basic Watchlist'}`}>
                 <footer>
                     <div class="social">
                         <a href="#"><i class="icon ion-social-instagram"></i></a><a href="#d"><i
@@ -28,12 +23,23 @@ export function Footer({ className }, { position }) {
 
 export default styled(Footer)`
 .footer-basic {
-    margin-top: 9rem;
     background: linear-gradient(to top, #f69e67, #f5a263, #f6bc86, #f9d0a2, #f8e2c5);
     height: 10rem;
     border-radius: 200px 200px 0px 0px;
     padding: 40px 0 50px;
     color: #ffffff;
+}
+
+.Home{
+    margin-top: 9rem;
+}
+
+.Login{
+    margin-top: 1rem;
+}
+
+.Watchlist{
+    margin-top:14rem;
 }
 
 .footer-basic ul {

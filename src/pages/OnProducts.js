@@ -3,18 +3,19 @@ import Navbar from '../components/Navbar';
 import ContainerNavbar from '../components/ContainerNavbar';
 import Footer from '../components/Footer';
 import HeadOnPeoduct from '../components/HeadOnPeoduct';
-import Products from '../components/ShowProducts';
+import Products from '../components/ShowProduct';
 
 
 function OnProducts() {
     return (
         <Fragment>
-            <ContainerNavbar>
+            <ContainerNavbar position="OnProduct">
                 <Navbar />
-                <HeadOnPeoduct />
+                <HeadOnPeoduct>
+                    <Products />
+                </HeadOnPeoduct>
+
             </ContainerNavbar>
-            <Products />
-            <Footer />
         </Fragment >
     );
 }

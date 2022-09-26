@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 function WatchList() {
     return (
         <Fragment>
-            <ContainerNavbar>
+            <ContainerNavbar position="WatchList">
                 <Navbar />
             </ContainerNavbar>
             <WatchListProductSection />

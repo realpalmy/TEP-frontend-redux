@@ -4,13 +4,13 @@ import ContainerNavbar from '../components/ContainerNavbar';
 import SectionOne from '../components/SectionOne';
 import Category from '../components/Category';
 import Footer from '../components/Footer';
-import Products from '../components/ShowProducts';
+import Products from '../components/ShowProductsHome';
 
 
 function Home() {
     return (
         <Fragment>
-            <ContainerNavbar>
+            <ContainerNavbar position="Home">
                 <Navbar />
                 <SectionOne />
             </ContainerNavbar>
