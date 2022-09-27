@@ -4,21 +4,22 @@ import data from "../app/productData";
 import styled from 'styled-components';
 import axios from 'axios';
 
-export function ShowProduct({ className }) {
+export function ShowProduct({ className, categoryID }) {
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        async function getProducts() {
-            const products = await axios.get(
-                'http://localhost:8000/products/'
-            );
-            setProducts(products.data);
-        }
+    console.log(categoryID);
 
-        getProducts();
-    }, []);
+    async function getProducts() {
+        const products = await axios.get(
+            `http://localhost:8000/products/category/${categoryID}`
+        );
+        setProducts(products.data);
+    }
+
+    getProducts();
 
     console.log(products);
+
     return (
         <>
             <div class="margin-top-25rem">
@@ -37,7 +38,6 @@ export function ShowProduct({ className }) {
                         }
                     </div>
                 </div>
-
             </div>
 
         </>

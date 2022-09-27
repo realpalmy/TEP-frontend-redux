@@ -10,7 +10,6 @@ import GlobalStyle from './components/GlobalStyle';
 
 
 function App() {
-
   return (
     <Fragment>
       <GlobalStyle />
@@ -18,9 +17,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/LoginPages" element={<LoginPages />} />
         <Route path="/WatchList" element={<WatchList />} />
-        <Route path="/OnProducts" element={<OnProducts />} />
+        <Route path="/OnProducts/:id" element={<OnProducts />} />
         <Route path="/DetailProduct" element={<DetailProduct />} />
-        <Route path="/AddProduct" element={<AddProduct />} />
+        <Route path='/AddProduct' element={<AddProduct />} />
       </Routes>
     </Fragment >
   );

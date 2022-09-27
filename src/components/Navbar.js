@@ -11,7 +11,7 @@ function Navbar({ className }) {
                         <Link to="/">
                             <div class="d-flex">
                                 <div class="me-1">
-                                    <img src="./image/bid-shadow.png" class="logo" alt="..." />
+                                    <img src="../image/bid-shadow.png" class="logo" alt="..." />
                                 </div>
                             </div>
                         </Link>
@@ -38,12 +38,21 @@ function Navbar({ className }) {
                                             Auction
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-primary">
-                                            <Link to="/OnProducts" class="text-decoration dropdown-item">
+                                            <Link to='/OnProducts/1' class="text-decoration dropdown-item">
                                                 VEHICLES
                                             </Link>
-                                            <li><a class="dropdown-item" href=".">WATCHES</a></li>
-                                            <li><a class="dropdown-item" href=".">ELECTRONICS</a></li>
-                                            <li><a class="dropdown-item" href=".">JEWELRY</a></li>
+                                            <li>
+                                                <Link to='/OnProducts/2' class="text-decoration dropdown-item">
+                                                    WATCHES
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link to='/OnProducts/3' class="text-decoration dropdown-item">
+                                                    ELECTRONICS
+                                                </Link></li>
+                                            <li><Link to='/OnProducts/4' class="text-decoration dropdown-item">
+                                                JEWELRY
+                                            </Link></li>
                                         </ul>
                                     </li>
                                 </ul>
