@@ -47,9 +47,25 @@ function Navbar({ className }) {
                                     </ul>
                                 </li>
                             </ul>
-                            <li class="nav-item"><a class="nav-link text-white me-3" href="#portfolio"><Link to="/Watchlist" class="text-white text-decoration">
-                            Watchlist
-                                </Link></a></li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#portfolio">
+                                    <Link to="/Watchlist" class="text-white text-decoration">Watchlist</Link>
+                                </a>
+                            </li>
+                            <li class="nav-item me-3">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle text-white" href="." role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            My TEP
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-primary">
+                                            <li><a class="dropdown-item" href=".">Bid/Offers</a></li>
+                                            <li><a class="dropdown-item" href=".">Selling</a></li>
+                                            <li><a class="dropdown-item" href=".">Your Selling</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                         <span class="navbar-text row d-flex justify-content-between align-items-center h-100 x">
                             <div className='col-10'>
