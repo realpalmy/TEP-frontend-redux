@@ -6,7 +6,7 @@ function Navbar({ className }) {
     return (
         <div className={className}>
             <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 col-12" id="mainNav">
-                <div class="container px-4 px-lg-5">
+                <div class="container d-flex justify-content-between col-11 ms-lg-auto ms-0">
                     <Link to="/">
                         <div class="d-flex">
                             <div class="me-1">
@@ -19,44 +19,59 @@ function Navbar({ className }) {
                     </Link>
                     <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                        aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ms-auto my-2 my-lg-0 dropshadow fs-5">
-                            <li class="nav-item"><a class="nav-link text-white">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href='/'>
                                 <Link to="/" class="text-white text-decoration">
                                     Home
                                 </Link>
-                            </a></li>
+                                </a>
+                            </li>
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a className="nav-link dropdown-toggle text-white" href="./" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Auction
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary">
-                                        <li><a class="dropdown-item" href="#">VEHICLES</a></li>
-                                        <li><a class="dropdown-item" href="#">WATCHES</a></li>
-                                        <li><a class="dropdown-item" href="#">ELECTRONICS</a></li>
-                                        <li><a class="dropdown-item" href="#">JEWELRY</a></li>
+                                        <li><a class="dropdown-item" href=".">VEHICLES</a></li>
+                                        <li><a class="dropdown-item" href=".">WATCHES</a></li>
+                                        <li><a class="dropdown-item" href=".">ELECTRONICS</a></li>
+                                        <li><a class="dropdown-item" href=".">JEWELRY</a></li>
                                     </ul>
                                 </li>
                             </ul>
-                            <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Watchlist</a></li>
+                            <li class="nav-item"><a class="nav-link text-white me-3" href="#portfolio">Watchlist</a></li>
                         </ul>
+                        <span class="navbar-text row d-flex justify-content-between align-items-center h-100 x">
+                            <div className='col-10'>
+                                <form class="input-group rounded-pill">
+                                    <input class="form-control remove-bg rounded-pill search text-white" type="text" placeholder="Search any product..." />
+                                    <i class="bi bi-search m-2 me-3 text-white text-shadow"></i>
+                                </form> 
+                            </div>
+                            <div className='col-2 text-end'>
+                                <Link to="/LoginPages">
+                                    <i class="bi bi-person-bounding-box fs-1 text-white"></i>
+                                </Link> 
+                            </div>
+                        </span>
                     </div>
-                </div>
-                <form class="input-group rounded-pill x">
-                    <input class="form-control remove-bg rounded-pill search text-white" type="text" placeholder="Search any product..." />
-                    <i class="bi bi-search m-2 me-3 text-white text-shadow"></i>
-                </form>
 
-                <Link to="/LoginPages">
-                    <i class="bi bi-person-bounding-box ms-5 fs-1 text-white"></i>
-                </Link>
-
+                </div>  
             </nav >
         </div>
     );
 }
+
+/*
+.navbar {
+    padding: 0 10rem 0 10rem;
+} */
+
 
 export default styled(Navbar)`
 @media (prefers-reduced-motion: no-preference) {
@@ -69,10 +84,6 @@ export default styled(Navbar)`
     background: rgba(245, 3, 3, 0);
 }
 
-.navbar {
-    padding: 0 10rem 0 10rem;
-}
-
 .x::placeholder {
     font-weight: bold;
     color: white;
@@ -80,7 +91,7 @@ export default styled(Navbar)`
 
 .x {
     border: none;
-    width: 30rem;
+    width: 20rem;
 }
 
 .search{
@@ -110,4 +121,5 @@ nav {
 .text-decoration{
     text-decoration: none;
 }
+
 `;

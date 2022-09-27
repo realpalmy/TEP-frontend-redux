@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
 body{
     background: #F5F5F5;
+    
 }
 
 .header {
@@ -28,6 +29,7 @@ header.masthead {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    overflow-y: hidden; 
 }
 
 .remove-bg {
