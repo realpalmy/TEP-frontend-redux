@@ -2,50 +2,27 @@ import ProductCard from "./ProductCard";
 import React, { useState, useEffect } from 'react';
 import data from "../app/productData";
 import styled from 'styled-components';
+import axios from 'axios';
 
 export function ShowProduct({ className }) {
-    const [products, setProducts] = useState(data);
-    console.log(products)
+    const [products, setProducts] = useState([]);
 
-    /*
-    useEffect (() => {
-        data.forEach(element => {
-            setProducts(element);
-        })
-    });
-    */
+    useEffect(() => {
+        async function getProducts() {
+            const products = await axios.get(
+                'http://localhost:8000/products/'
+            );
+            setProducts(products.data);
+        }
+
+        getProducts();
+    }, []);
+
+    console.log(products);
     return (
         <>
             <div class="margin-top-25rem">
                 <div className={className}>
-                    <div className="container top">
-                        {
-                            products.length > 0 ? (
-                                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                                    {products.map((product) => (
-                                        <ProductCard product={product} />
-                                    ))}
-                                </div>
-                            ) : (
-                                <div>Loading products....</div>
-                            )
-                        }
-                    </div>
-
-                    <div className="container top">
-                        {
-                            products.length > 0 ? (
-                                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                                    {products.map((product) => (
-                                        <ProductCard product={product} />
-                                    ))}
-                                </div>
-                            ) : (
-                                <div>Loading products....</div>
-                            )
-                        }
-                    </div>
-
                     <div className="container top">
                         {
                             products.length > 0 ? (

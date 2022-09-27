@@ -1,7 +1,7 @@
 const products = [
     {
         id: 0,
-        imgUrl: "https://play-lh.googleusercontent.com/9pTMs7YPMB5p0QMbhY0OH5niwmTT55anAVhu37ud3-O2u1Je06cxZY3mvgVhymieR9rJ",
+        imgUrl: "https://cars.usnews.com/pics/size/350x262/images/Auto/izmo/i159614776/2022_chevrolet_corvette_stingray_angularfront.jpg",
         title: "UniqueCar1",
         category: {
             categoryID: 1,
