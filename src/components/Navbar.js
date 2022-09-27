@@ -38,14 +38,18 @@ function Navbar({ className }) {
                                         Auction
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary">
-                                        <li><a class="dropdown-item" href=".">VEHICLES</a></li>
+                                        <li><a class="dropdown-item" href="."> <Link to="/OnProducts" class="text-decoration">
+                                        VEHICLES
+                                </Link></a></li>
                                         <li><a class="dropdown-item" href=".">WATCHES</a></li>
                                         <li><a class="dropdown-item" href=".">ELECTRONICS</a></li>
                                         <li><a class="dropdown-item" href=".">JEWELRY</a></li>
                                     </ul>
                                 </li>
                             </ul>
-                            <li class="nav-item"><a class="nav-link text-white me-3" href="#portfolio">Watchlist</a></li>
+                            <li class="nav-item"><a class="nav-link text-white me-3" href="#portfolio"><Link to="/Watchlist" class="text-white text-decoration">
+                            Watchlist
+                                </Link></a></li>
                         </ul>
                         <span class="navbar-text row d-flex justify-content-between align-items-center h-100 x">
                             <div className='col-10'>
