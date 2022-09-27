@@ -5,87 +5,91 @@ import { Link } from 'react-router-dom';
 function Navbar({ className }) {
     return (
         <div className='w-100'>
-        <div className={className}>
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top col-12 py-3 py-md-0" id="mainNav">
-                <div class="container d-flex justify-content-between ms-lg-auto ms-0">
-                    <Link to="/">
-                        <div class="d-flex">
-                            <div class="me-1">
-                                <img src="./image/bid-shadow.png" class="logo" alt="..." />
+            <div className={className}>
+                <nav class="navbar navbar-expand-lg navbar-light fixed-top col-12 py-3 py-md-0" id="mainNav">
+                    <div class="container d-flex justify-content-between ms-lg-auto ms-0">
+                        <Link to="/">
+                            <div class="d-flex">
+                                <div class="me-1">
+                                    <img src="./image/bid-shadow.png" class="logo" alt="..." />
+                                </div>
                             </div>
-                        </div>
-                    </Link>
-                    <Link to="/DetailProduct" class="fs-3 text-white dropshadow text-decoration">
-                        TEP AUCTION
-                    </Link>
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ms-auto my-2 my-lg-0 dropshadow fs-5">
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href='/'>
-                                <Link to="/" class="text-white text-decoration">
-                                    Home
-                                </Link>
-                                </a>
-                            </li>
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle text-white" href="./" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Auction
+                        </Link>
+                        <Link to="/DetailProduct" class="fs-3 text-white dropshadow text-decoration">
+                            TEP AUCTION
+                        </Link>
+                        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarResponsive">
+                            <ul class="navbar-nav ms-auto my-2 my-lg-0 dropshadow fs-5">
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href='/'>
+                                        <Link to="/" class="text-white text-decoration">
+                                            Home
+                                        </Link>
                                     </a>
-                                    <ul class="dropdown-menu dropdown-menu-primary">
-                                        <li><a class="dropdown-item" href="."> <Link to="/OnProducts" class="text-decoration">
-                                        VEHICLES
-                                </Link></a></li>
-                                        <li><a class="dropdown-item" href=".">WATCHES</a></li>
-                                        <li><a class="dropdown-item" href=".">ELECTRONICS</a></li>
-                                        <li><a class="dropdown-item" href=".">JEWELRY</a></li>
-                                    </ul>
                                 </li>
-                            </ul>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="#portfolio">
-                                    <Link to="/Watchlist" class="text-white text-decoration">Watchlist</Link>
-                                </a>
-                            </li>
-                            <li class="nav-item me-3">
                                 <ul class="navbar-nav">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-white" href="." role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            My TEP
+                                        <a className="nav-link dropdown-toggle text-white" href="./" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Auction
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-primary">
-                                            <li><a class="dropdown-item" href=".">Bid/Offers</a></li>
-                                            <li><a class="dropdown-item" href=".">Selling</a></li>
-                                            <li><a class="dropdown-item" href=".">Your Selling</a></li>
+                                            <Link to="/OnProducts" class="text-decoration dropdown-item">
+                                                VEHICLES
+                                            </Link>
+                                            <li><a class="dropdown-item" href=".">WATCHES</a></li>
+                                            <li><a class="dropdown-item" href=".">ELECTRONICS</a></li>
+                                            <li><a class="dropdown-item" href=".">JEWELRY</a></li>
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
-                        <span class="navbar-text row d-flex justify-content-between align-items-center h-100 x">
-                            <div className='col-10'>
-                                <form class="input-group rounded-pill">
-                                    <input class="form-control remove-bg rounded-pill search text-white" type="text" placeholder="Search any product..." />
-                                    <i class="bi bi-search m-2 text-white text-shadow"></i>
-                                </form> 
-                            </div>
-                            <div className='col-2 text-end'>
-                                <Link to="/LoginPages">
-                                    <i class="bi bi-person-bounding-box fs-1 text-white"></i>
-                                </Link> 
-                            </div>
-                        </span>
-                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="#portfolio">
+                                        <Link to="/Watchlist" class="text-white text-decoration">Watchlist</Link>
+                                    </a>
+                                </li>
+                                <li class="nav-item me-3">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle text-white" href="." role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                My TEP
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-primary">
+                                                <li><a class="dropdown-item" href=".">Bid/Offers</a></li>
+                                                <li>
+                                                    <Link to="/AddProduct" class="text-decoration dropdown-item">
+                                                        Selling
+                                                    </Link>
+                                                </li>
+                                                <li><a class="dropdown-item" href=".">Your Selling</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <span class="navbar-text row d-flex justify-content-between align-items-center h-100 x">
+                                <div className='col-10'>
+                                    <form class="input-group rounded-pill">
+                                        <input class="form-control remove-bg rounded-pill search text-white" type="text" placeholder="Search any product..." />
+                                        <i class="bi bi-search m-2 text-white text-shadow"></i>
+                                    </form>
+                                </div>
+                                <div className='col-2 text-end'>
+                                    <Link to="/LoginPages">
+                                        <i class="bi bi-person-bounding-box fs-1 text-white"></i>
+                                    </Link>
+                                </div>
+                            </span>
+                        </div>
 
-                </div>  
-            </nav >
-        </div>    
-        </div>   
+                    </div>
+                </nav >
+            </div>
+        </div>
     );
 }
 
