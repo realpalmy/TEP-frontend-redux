@@ -91,6 +91,10 @@ header.masthead {
     margin-top: -27rem;
 }
 
+.margin-top-addForm {
+    margin-top: -45rem;
+}
+
 .bg-4E598C {
     border: 0px solid rgba(255, 255, 255, 0);
     background-image: linear-gradient(to bottom, #00509d, #1962b0, #2a74c4, #3987d7, #479aeb);
