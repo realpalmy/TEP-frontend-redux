@@ -6,27 +6,27 @@ export function SectionOne({ className }) {
         <div className={className}>
             <header class="container-fluid masthead">
                 <div class="d-flex justify-content-center">
-                    <div class="col ms-5 d-flex flex-column justify-content-center">
+                    <div class="col ms-5 d-flex flex-column justify-content-center d-none d-md-block w-50">
                         <img src="./homePicture.png" class="card-img-top" alt="..." />
                     </div>
 
-                    <div class="col ms-5 d-flex flex-column justify-content-center">
-                        <div class="ps-5 fs-3 text-4E598C width-563">
+                    <div class="col ps-1 ps-md-5 d-flex flex-column justify-content-center w-50">
+                        <div class="fs-md-3 fs-1 text-4E598C">
                             Next Generation Auction
                         </div>
-                        <div class="ps-5 text-96 width-563">
+                        <div class="text-96 width-563">
                             Find Your
                         </div>
-                        <div class="ps-5 text-96 width-563">
+                        <div class="text-96 width-563">
                             Next Deal !
                         </div>
-                        <div class="ps-5 fs-5 mt-2 dropshadow width-563 text-white">
+                        <div class="fs-5 mt-2 dropshadow width-563 text-white">
                             Online Auction is where everyone goes to shop, sell,and give, while discovering variety and affordability.
                         </div>
-                        <div class="ps-5 mt-5 width-563">
-                            <button type="button" class="btn-lg bg-4E598C fs-4 rounded-pill p-2 text-white">Shop
-                                Now
-                                !</button>
+                        <div class="mt-5 width-563">
+                            <button type="button" class="btn-lg bg-4E598C fs-4 rounded-pill p-2 text-white">
+                                Shop Now!
+                            </button>
                         </div>
                     </div>
                 </div>

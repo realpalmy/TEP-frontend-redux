@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 
 function Navbar({ className }) {
     return (
+        <div className='w-100'>
         <div className={className}>
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 col-12" id="mainNav">
-                <div class="container d-flex justify-content-between col-11 ms-lg-auto ms-0">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top col-12 py-3 py-md-0" id="mainNav">
+                <div class="container d-flex justify-content-between ms-lg-auto ms-0">
                     <Link to="/">
                         <div class="d-flex">
                             <div class="me-1">
@@ -50,7 +51,7 @@ function Navbar({ className }) {
                             <div className='col-10'>
                                 <form class="input-group rounded-pill">
                                     <input class="form-control remove-bg rounded-pill search text-white" type="text" placeholder="Search any product..." />
-                                    <i class="bi bi-search m-2 me-3 text-white text-shadow"></i>
+                                    <i class="bi bi-search m-2 text-white text-shadow"></i>
                                 </form> 
                             </div>
                             <div className='col-2 text-end'>
@@ -63,7 +64,8 @@ function Navbar({ className }) {
 
                 </div>  
             </nav >
-        </div>
+        </div>    
+        </div>   
     );
 }
 
