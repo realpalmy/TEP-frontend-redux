@@ -7,15 +7,30 @@ const GlobalStyle = createGlobalStyle`
 
 body{
     background: #F5F5F5;
+    
+}
+
+.header {
+    background: linear-gradient(to bottom, #ff8c42, #fd9c50, #fab06b, #f9d0a2, #f8e2c5);
+    height: 55rem;
+    width: 100%;
+    border-radius: 0px 0px 200px 200px;
+}
+
+.header-login {
+    background: linear-gradient(to bottom, #ff8c42, #fd9c50, #fab06b, #f9d0a2, #f8e2c5);
+    height: 35rem;
+    border-radius: 0px 0px 200px 200px;
 }
 
 header.masthead {
-    height: 1000px;
+    height: 100%;
     padding-top: 7rem;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
+    overflow-y: hidden; 
 }
 
 .remove-bg {

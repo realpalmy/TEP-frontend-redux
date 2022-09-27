@@ -9,10 +9,10 @@ function ProductCard({ product }) {
         <>
             <div className="col">
                 <div className="shadow card" style={{ width: "20rem" }}>
-                    <div className="card-body" style={{ height: "15rem" }}>
-                        <img className='rounded float-center img-fluid' style={{ width: '100%', height: '100%' }} src={product.imgUrl} alt="..." />
+                    <div className="card-body d-flex justify-content-center align-items-center" style={{ height: "15rem" }}>
+                        <img className='rounded float-center img-fluid' style={{ "max-width": '100%', "max-height": '100%' }} src={product.imgUrl} alt="..." />
                     </div>
-                    <div className="card-body">
+                    <div className="card-body" style={{ height: "6rem" }}>
                         <h5 className="card-title">{product.title}</h5>
                     </div>
                     <ul className="list-group list-group-flush">
