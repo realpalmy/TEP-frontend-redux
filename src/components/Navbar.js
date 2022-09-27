@@ -56,7 +56,10 @@ function Navbar({ className }) {
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary">
                                         <li><a class="dropdown-item" href="#">Bid/Offers</a></li>
-                                        <li><a class="dropdown-item" href="#">Selling</a></li>
+                                        <li><a class="dropdown-item" href="#">
+                                            <Link to="/AddProduct" class="text-dark text-decoration">
+                                    Selling
+                                </Link></a></li>
                                         <li><a class="dropdown-item" href="#">Your Selling</a></li>
                                     </ul>
                                 </li>
