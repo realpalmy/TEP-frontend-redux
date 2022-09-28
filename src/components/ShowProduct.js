@@ -7,18 +7,16 @@ import axios from 'axios';
 export function ShowProduct({ className, categoryID }) {
     const [products, setProducts] = useState([]);
 
-    console.log(categoryID);
 
-    async function getProducts() {
-        const products = await axios.get(
-            `http://localhost:8000/products/category/${categoryID}`
-        );
-        setProducts(products.data);
-    }
-
-    getProducts();
-
-    console.log(products);
+    useEffect(() => {
+        async function getProducts() {
+            const products = await axios.get(
+                `http://localhost:8000/products/category/${categoryID}`
+            );
+            setProducts(products.data);
+        }
+        getProducts();
+    }, []);
 
     return (
         <>
@@ -39,7 +37,6 @@ export function ShowProduct({ className, categoryID }) {
                     </div>
                 </div>
             </div>
-
         </>
     );
 }
