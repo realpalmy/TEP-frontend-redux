@@ -9,7 +9,7 @@ export default function Login() {
 
                         <div className="d-flex justify-content-center align-items-center" style={{ width: '100%', height: '100%' }}>
                             <div>
-                                <img src="./22.png" style={{ width: '100%' }} alt="..." />
+                                <img src="../22.png" style={{ width: '100%' }} alt="..." />
                                 <div class="text-center fs-2 dropshadow text-white">what's your it's your !!!</div>
                             </div>
                         </div>

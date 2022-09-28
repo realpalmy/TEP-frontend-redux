@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 export function Footer({ className, position }) {
     console.log(position);
     return (
@@ -11,9 +13,14 @@ export function Footer({ className, position }) {
                             class="icon ion-social-twitter"></i></a><a href="#d"><i class="icon ion-social-facebook"></i></a>
                     </div>
                     <ul class="list-inline dropshadow fs-5">
-                        <li class="list-inline-item dropshadow"><a href="#d">Home</a></li>
+                        <li class="list-inline-item dropshadow">
+                            <Link to="/" class="text-white text-decoration">
+                                Home
+                            </Link></li>
                         <li class="list-inline-item"><a href="#d">Aution</a></li>
-                        <li class="list-inline-item"><a href="#d">Watchlist</a></li>
+                        <li class="list-inline-item"><a href="#d"><Link to="/WatchList" class="text-white text-decoration">
+                            Watchlist
+                        </Link></a></li>
                     </ul>
                 </footer>
             </div>

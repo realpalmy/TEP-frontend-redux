@@ -48,7 +48,7 @@ function Navbar({ className }) {
                                             </li>
                                             <li>
                                                 <Link to='/OnProducts/3' class="text-decoration dropdown-item">
-                                                    ELECTRONICS
+                                                    CAMERA
                                                 </Link></li>
                                             <li><Link to='/OnProducts/4' class="text-decoration dropdown-item">
                                                 JEWELRY
