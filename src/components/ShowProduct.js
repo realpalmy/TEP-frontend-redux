@@ -18,6 +18,7 @@ export function ShowProduct({ className, categoryID }) {
         getProducts();
     }, [categoryID]);
 
+
     return (
         <>
             <div class="margin-top-25rem">

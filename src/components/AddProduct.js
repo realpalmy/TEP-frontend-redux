@@ -22,6 +22,7 @@ export default function AddProduct() {
     }
 
     const category = ["VEHICLES", "WATCH", "CAMERA", "JEWELRY", "SPORTS"];
+
     const SubmitHandler = (event) => {
         axios.post("http://localhost:8000/products/", {
             imgUrl: `http://localhost:8000/products/img/${urlFile}`,

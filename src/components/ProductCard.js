@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./test.css";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { MdAttachMoney } from "react-icons/md";
-
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
     let [time, settime] = useState();
@@ -63,9 +63,13 @@ function ProductCard({ product }) {
                     </ul>
 
                     <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center">
-                        <button className="btn btn-primary rounded-pill bg-gradient" type="button">
-                            <a href={"./"} className="text-decoration-none text-light">Submit A Bid</a>
-                        </button>
+
+                        <Link to={`/DetailProduct/${product.id}`} class="text-light text-decoration-none">
+                            <button className="btn btn-primary rounded-pill bg-gradient" type="button">
+                                Submit A Bid
+                            </button>
+                        </Link>
+
                     </div>
 
                 </div>
