@@ -16,7 +16,7 @@ export function ShowProduct({ className, categoryID }) {
             setProducts(products.data);
         }
         getProducts();
-    }, []);
+    }, [categoryID]);
 
     return (
         <>

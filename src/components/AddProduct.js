@@ -19,7 +19,6 @@ export default function AddProduct() {
             url: 'http://localhost:8000/products/upload',
             data: formData
         });
-
     }
 
     const SubmitHandler = (event) => {
