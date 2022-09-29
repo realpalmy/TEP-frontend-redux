@@ -94,11 +94,11 @@ export function DetailProduct({ className, productId }) {
                             </div>
                         </div>
                     </div>
-                    <div class="mt-3 show-time col-lg-2 col-md-8 col-sm-12 ">
+                    <div class="show-time col-lg-3 align-self-center">
                         <h6 class="">This Auction Ends in:</h6>
                         <div class="show-count">
                             <div class="countdown">
-                                <div id="bid_counter1">0d : 0h : 0m : 0s</div>
+                                <div id="bid_counter1">{time}</div>
                             </div>
                         </div>
                     </div>
