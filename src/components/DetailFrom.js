@@ -57,7 +57,7 @@ export function DetailProduct({ className, productId }) {
                         </div>
                     </div>
                 </div>
-                <div class=" d-flex p-5 row col-12 justify-content-md-center">
+                <div class=" d-flex p-5 row col-12 justify-content-md-center justify-content-start">
                     <div class=" detail col-lg-6 col-md-8 col-sm-12 ">
                         <div class="product-content">
                             <div class="product-header" >
@@ -94,7 +94,7 @@ export function DetailProduct({ className, productId }) {
                             </div>
                         </div>
                     </div>
-                    <div class="show-time col-lg-3 align-self-center">
+                    <div class="show-time col-lg-3 align-self-start mt-5">
                         <h6 class="">This Auction Ends in:</h6>
                         <div class="show-count">
                             <div class="countdown">
