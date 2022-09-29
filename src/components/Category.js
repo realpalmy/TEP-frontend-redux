@@ -20,8 +20,7 @@ export function Category({ className }) {
     // console.log(products);
     return (
         <div className={className}>
-            <div class="d-flex justify-content-evenly col-12 row category ">
-
+            <div class="d-flex justify-content-evenly col-12 row category d-none d-md-flex">
                 <div class="col-12 row category-img category-card d-flex justify-content-center" >
                     <Link to='/OnProducts/1' class="text-decoration text-dark text-category">
                         <div class="text-category">
