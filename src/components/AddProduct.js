@@ -21,14 +21,14 @@ export default function AddProduct() {
         });
     }
 
+    const category = ["VEHICLES", "WATCH", "CAMERA", "JEWELRY", "SPORTS"];
     const SubmitHandler = (event) => {
-        console.log(file);
         axios.post("http://localhost:8000/products/", {
             imgUrl: `http://localhost:8000/products/img/${urlFile}`,
             title: event.target.productName.value,
             category: {
-                categoryID: 1,
-                caregoryName: "Car",
+                categoryID: Number.parseInt(event.target.category.value),
+                caregoryName: category[event.target.category.value - 1],
             },
             detail: event.target.productDetail.value,
             currentBid: event.target.startPrice.value,
@@ -55,18 +55,28 @@ export default function AddProduct() {
                                     <h1 className="">Add New Product</h1>
                                 </div>
                                 <div className="mb-3">
-
                                     <label for="formFileMultiple" class="form-label">Upload product image</label>
                                     <input
                                         type="file"
                                         name="myImage"
                                         className="form-control"
                                         onChange={handleChange}
+
                                     />
                                 </div>
                                 <div className="mb-3">
                                     <label for="exampleFormControlInput1" className="form-label">Product Name</label>
                                     <input type="text" class="form-control" id="productName" required></input>
+                                </div>
+                                <div className="mb-3">
+                                    <select class="form-select" aria-label="Default select example" id="category" required>
+                                        <option selected>Product Category ...</option>
+                                        <option value="1">VEHICLES</option>
+                                        <option value="2">WATCH</option>
+                                        <option value="3">CAMERA</option>
+                                        <option value="4">JEWELRY</option>
+                                        <option value="5">SPORTS</option>
+                                    </select>
                                 </div>
                                 <div className="mb-3">
                                     <label for="exampleFormControlInput1" className="form-label">Start Price</label>
