@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./test.css";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { MdAttachMoney } from "react-icons/md";
-
+import { Link } from 'react-router-dom';
 
 function ProductCard({ product }) {
+    let [time, settime] = useState();
+    var countDownDate = new Date(product.countDown).getTime();
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        settime(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+    }, 1000);
+
     return (
         <>
             <div className="col">
@@ -41,7 +55,7 @@ function ProductCard({ product }) {
 
                         <li className="list-group-item">
                             <div className="row">
-                                <div className="col-8 border-end text-center text-danger">{product.countDown}</div>
+                                <div className="col-8 border-end text-center text-danger">{time}</div>
                                 <div className="col-4 text-center text-success">{product.bitAmount} bid(s)</div>
                             </div>
                         </li>
@@ -49,9 +63,13 @@ function ProductCard({ product }) {
                     </ul>
 
                     <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center">
-                        <button className="btn btn-primary rounded-pill bg-gradient" type="button">
-                            <a href={"./"} className="text-decoration-none text-light">Submit A Bid</a>
-                        </button>
+
+                        <Link to={`/DetailProduct/${product.id}`} class="text-light text-decoration-none">
+                            <button className="btn btn-primary rounded-pill bg-gradient" type="button">
+                                Submit A Bid
+                            </button>
+                        </Link>
+
                     </div>
 
                 </div>

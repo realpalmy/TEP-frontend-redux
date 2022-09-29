@@ -1,7 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
-export function DetailProduct({ className }) {
+export function DetailProduct({ className, productId }) {
+    const [products, setProducts] = useState([]);
+
+    let [time, settime] = useState();
+    var countDownDate = new Date(products.countDown).getTime();
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        settime(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+    }, 1000);
+
+    useEffect(() => {
+        async function getProducts() {
+            const products = await axios.get(
+                `http://localhost:8000/products/${productId}`
+            );
+            setProducts(products.data);
+        }
+        getProducts();
+    }, [productId]);
+
+    console.log(products);
+
     return (
         <div class="margin-top-25rem ">
             <div className={className} >
@@ -31,11 +60,21 @@ export function DetailProduct({ className }) {
                 </div>
                 <div class=" d-flex p-5 row col-12 justify-content-md-center">
                     <div class=" detail col-lg-6 col-md-8 col-sm-12 ">
+        <div class="margin-top-25rem">
+            <div className={className}>
+                <div class="d-flex justify-content-center col-12 row mt-3">
+                    <div id="card-box" class="card rounded-5" style={{ width: "55rem" }}>
+                        <img src={products.imgUrl} class="size-img-bid" alt="..." />
+                    </div>
+                </div>
+
+                <div class=" row mt-5 p-5">
+                    <div class=" detail col-lg-6">
                         <div class="product-content">
                             <div class="product-header" >
-                                <h1 class="">Product Name</h1>
+                                <h1 class="">{products.title}</h1>
                                 <ul>
-                                    <li class="text-secondary">Listing ID: 123456</li>
+                                    <li class="text-secondary">Listing ID: {products.id}</li>
                                 </ul>
                             </div>
                             <ul class="show-price mb-4">
@@ -46,12 +85,19 @@ export function DetailProduct({ className }) {
                                 <div class="product-detail d-flex " style={{ display: 'flex' }}>
                                     <h5>Bid Increment (US) </h5>
                                     <h2>$50.00</h2>
+                                    <h2 class="text-danger">$ {products.currentBid}</h2>
+
+                                </div>
+                                <div class="product-detail d-flex " style={{ display: 'flex' }}>
+                                    <h5>Bid Increment (US) </h5>
+                                    <h2>$50</h2>
+
                                 </div>
                             </ul>
                             <div class="bid-area mb-2">
                                 <form class="input-group rounded-pill ">
                                     <div class="search-icon">
-                                        <img src="./image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
+                                        <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
                                     </div>
                                     <input class="form-control col-lg-6 col-md-6 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="text" placeholder="Enter your bid amount..."></input>
                                     <button type="button" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3">Submit A Bid</button>
@@ -70,7 +116,7 @@ export function DetailProduct({ className }) {
                         <h6 class="">This Auction Ends in:</h6>
                         <div class="show-count">
                             <div class="countdown">
-                                <div id="bid_counter1">0d : 0h : 0m : 0s</div>
+                                <div id="bid_counter1">{time}</div>
                             </div>
                         </div>
                     </div>
@@ -78,16 +124,8 @@ export function DetailProduct({ className }) {
                 <div class="row d-flex row col-12 justify-content-md-center mt-5 ">
                     <div class="detail-content col-lg-8 col-md-10 col-sm-12">
                         <div class="item mb-5">
-                            <h4 class="item-title mb-2">Detail 1: </h4>
-                            <p class="mt-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        </div>
-                        <div class="item mb-5">
-                            <h4 class="item-title mb-2">Detail 2: </h4>
-                            <p class="mt-1">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text</p>
-                        </div>
-                        <div class="item mb-5">
-                            <h4 class="item-title mb-2">Detail 3: </h4>
-                            <p class="mt-1">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.</p>
+                            <h4 class="item-title mb-2">Detail : </h4>
+                            <p class="mt-1">{products.detail}</p>
                         </div>
                     </div>
                 </div>

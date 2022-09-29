@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Navbar from '../components/Navbar';
+import { useParams } from 'react-router-dom'
 import ContainerNavbar from '../components/ContainerNavbar';
 import SectionOne from '../components/SectionOne';
 import Category from '../components/Category';
@@ -9,16 +10,18 @@ import DetailFrom from '../components/DetailFrom';
 import HeadOnPeoduct from '../components/HeadOnPeoduct';
 
 
-function Home() {
+function DetailProduct() {
+    let { id } = useParams();
+    console.log(id);
     return (
         <Fragment>
             <ContainerNavbar position="DetailProduct">
                 <Navbar />
             </ContainerNavbar>
-            <DetailFrom />
+            <DetailFrom productId={`${id}`} />
             <Footer />
         </Fragment >
     );
 }
 
-export default Home;
+export default DetailProduct;

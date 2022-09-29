@@ -15,7 +15,7 @@ function Navbar({ className }) {
                                 </div>
                             </div>
                         </Link>
-                        <Link to="/DetailProduct" class="fs-3 text-white dropshadow text-decoration">
+                        <Link to="/" class="fs-3 text-white dropshadow text-decoration">
                             TEP AUCTION
                         </Link>
                         <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
