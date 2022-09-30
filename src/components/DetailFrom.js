@@ -94,8 +94,8 @@ export function DetailProduct({ className, productId }) {
                                         <div class="search-icon">
                                             <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
                                         </div>
-                                        <input class="form-control col-lg-8 col-md-8 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
-                                        <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3">Submit A Bid</button>
+                                        <input class="form-control col-lg-6 col-md-6 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
+                                        <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3 ">Submit A Bid</button>
                                     </form>
                                 </div>
                                 <div class="d-flex justify-content-center mt-3 mb-5 col-lg-8 col-md-8 col-sm-12">
@@ -193,12 +193,7 @@ ul li {
 .detail-content {
     margin-top: -8rem;
 }
-.btn-disabled{
-    cursor: not-allowed;
-    pointer-events: none;
-    border: 0px solid rgba(255, 255, 255, 0);   
-    background: linear-gradient(to bottom, #283048, #859398);
-}
+
 
 .tap{
     margin-top: 8rem;
