@@ -40,13 +40,13 @@ export function DetailProduct({ className, productId }) {
         getProducts();
     }, [bid]);
 
-
     const onBid = async (event) => {
         event.preventDefault();
         setBid(Number.parseInt(event.target.bid.value));
         axios.put(`http://localhost:8000/products/update/${products.id}`, {
             currentBid: Number.parseInt(event.target.bid.value),
-            userid: userToken[0].id
+            userid: userToken[0].id,
+            winnerBid : userToken[0].id
         })
     }
 
