@@ -38,7 +38,7 @@ export function DetailProduct({ className, productId }) {
             setProducts(products.data);
         }
         getProducts();
-    }, [bid]);
+    }, [products]); //[bid]
 
     const onBid = async (event) => {
         event.preventDefault();
