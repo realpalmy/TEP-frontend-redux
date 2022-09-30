@@ -50,6 +50,15 @@ export function DetailProduct({ className, productId }) {
         })
     }
 
+    const endBit = async (event) => {
+        event.preventDefault();
+        console.log("end pls")
+        axios.put(`http://localhost:8000/products/buynow/${products.id}`, {
+            time: "0000-00-00",
+            winnerBid : userToken[0].id
+        })
+    }
+
     return (
         <div className="margin-top-25rem ">
             <div className={className} >
@@ -106,7 +115,7 @@ export function DetailProduct({ className, productId }) {
                                     <div className="d-flex ">
                                         <input className="ms-1 form-control col-lg-6 col-md-6 col-sm-12 rounded-pill text-secondary me-2" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
                                         <button type="submit" className="btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1">Submit A Bid</button>
-                                        <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1">BUY NOW</button>
+                                        <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1" onClick={endBit}>BUY NOW</button>
                                     </div>
                                     </div>
                                     
