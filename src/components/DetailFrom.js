@@ -49,59 +49,67 @@ export function DetailProduct({ className, productId }) {
     return (
         <div class="margin-top-25rem ">
             <div className={className} >
-                <div class="d-flex justify-content-md-center row col-12">
+                <div class="d-flex justify-content-md-center row col-12 mb-5 ">
                     <div id="card-box" class="card rounded-5 col-sm-12 col-md-10 col-lg-8" style={{ width: "55rem" }}>
                         <img src={products.imgUrl} class="size-img-bid" alt="..." />
                     </div>
                 </div>
 
-                <div class=" d-flex p-5 row col-12 justify-content-md-center justify-content-start mt-5">
-                    <div class=" detail col-lg-6 col-md-8 col-sm-12 ">
+                <div class=" d-flex p-5 row col-12 justify-content-md-center justify-content-start tap">
+                    <div class=" detail col-lg-8 col-md-8 col-sm-12 ">
                         <div class="product-content">
                             <div class="product-header" >
-                                <h1 class="">{products.title}</h1>
+                                <h1 class="col-12">{products.title}</h1>
                                 <ul>
                                     <li class="text-secondary">Listing ID: {products.id}</li>
                                 </ul>
                             </div>
-                            <ul class="show-price mb-4">
-                                <div class="product-detail d-flex " style={{ display: 'flex' }}>
-                                    <h5>Current Price</h5>
-                                    <h2 class="text-danger">${products.currentBid}</h2>
-                                </div>
-                                <div class="product-detail d-flex " style={{ display: 'flex' }}>
-                                    <h5>Bid Increment (US)</h5>
-                                    <h2>$50</h2>
-                                </div>
-                            </ul>
-                            <div class="bid-area mb-2">
-                                <form class="input-group rounded-pill" onSubmit={onBid}>
-                                    <div class="search-icon">
-                                        <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
+                            <div class="row d-flex col-12 justify-content-md-center">
+                                <ul class="show-price mb-4 col-md-8 col-sm-12">
+                                    <div class="product-detail d-flex text-success" style={{ display: 'flex' }}>
+                                        <h5>Current Price</h5>
+                                        <h2 class="">${products.currentBid}</h2>
                                     </div>
-                                    <input class="form-control col-lg-6 col-md-6 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
-                                    <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3">Submit A Bid</button>
-                                </form>
+                                    <div class="product-detail d-flex text-primary" style={{ display: 'flex' }}>
+                                        <h5>Bid Increment (US)</h5>
+                                        <h2>$50</h2>
+                                    </div>
+                                    <div class="product-detail d-flex text-danger" style={{ display: 'flex' }}>
+                                        <h5 >Buy Now </h5>
+                                        <h2 class="">$50.00</h2>
+                                    </div>
+                                </ul>
+                                <div class="ms-3 show-time col-lg-3 align-self-start mt-5 mb-4">
+                                    <h6 class="">This Auction Ends in:</h6>
+                                    <div class="show-count">
+                                        <div class="countdown">
+                                            <div id="bid_counter1">{x}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                             </div>
-                            <div class="d-flex justify-content-center mt-3 mb-5">
-                                <button type="button" class="btn-lg bg-4E598C rounded-pill p-3 text-white px-3 mx-5">BUY NOW</button>
-                                <button type="button" class="btn-lg bg-watchlist rounded-pill p-3 text-dark px-3 mx-5">
-                                    <i class="bi bi-star "></i>
-                                    Add To WatchList
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="show-time col-lg-3 align-self-start mt-5">
-                        <h6 class="">This Auction Ends in:</h6>
-                        <div class="show-count">
-                            <div class="countdown">
-                                <div id="bid_counter1">{x}</div>
-                            </div>
+                            <div class="ms-0 bid-area mb-2 col-lg-8 col-md-8 col-sm-12">
+                                    <form class="input-group rounded-pill" onSubmit={onBid}>
+                                        <div class="search-icon">
+                                            <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
+                                        </div>
+                                        <input class="form-control col-lg-8 col-md-8 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
+                                        <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3">Submit A Bid</button>
+                                    </form>
+                                </div>
+                                <div class="d-flex justify-content-center mt-3 mb-5 col-lg-8 col-md-8 col-sm-12">
+                                    <button type="button" class="btn-lg bg-4E598C rounded-pill p-3 text-white px-5 mx-5">BUY NOW</button>
+                                    <button type="button" class="btn-lg bg-watchlist rounded-pill p-3 text-dark px-3 mx-5">
+                                        <i class="bi bi-star "></i>
+                                        Add To WatchList
+                                    </button>
+                                </div>
                         </div>
                     </div>
                 </div>
-                <div class="row d-flex row col-12 justify-content-md-center mt-5 ">
+                
+                <div class="row d-flex row col-12 justify-content-md-center tap">
                     <div class="detail-content col-lg-8 col-md-10 col-sm-12">
                         <div class="item mb-5">
                             <h4 class="item-title mb-2">Detail</h4>
@@ -161,7 +169,7 @@ ul li {
     border-radius: 20px;
     padding: 2rem 0 1rem 0;
     text-align: center;
-    margin-bottom: 10rem;
+    // margin-bottom: 10rem;
 }
 
 .countdown {
@@ -185,5 +193,14 @@ ul li {
 .detail-content {
     margin-top: -8rem;
 }
+.btn-disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    border: 0px solid rgba(255, 255, 255, 0);   
+    background: linear-gradient(to bottom, #283048, #859398);
+}
 
+.tap{
+    margin-top: 8rem;
+}
 `;
