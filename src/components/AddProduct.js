@@ -5,11 +5,24 @@ export default function AddProduct() {
     const [file, setFile] = useState();
     const [urlFile, setUrlFile] = useState();
 
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1; //January is 0 so need to add 1 to make it 1!
+    let yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
 
     const handleChange = (e) => {
         setFile(e.target.files[0]);
         setUrlFile(e.target.files[0].name);
     }
+
 
     const onClickUpload = async () => {
         const formData = new FormData()
@@ -84,12 +97,12 @@ export default function AddProduct() {
                                     <input type="number" min="0" class="form-control" id="startPrice" required></input>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="exampleFormControlInput1" className="form-label">Final Price</label>
+                                    <label for="exampleFormControlInput1" className="form-label">Buy Now Price</label>
                                     <input type="number" min="0" class="form-control" id="finalPrice" required></input>
                                 </div>
                                 <div className="mb-3">
                                     <label for="exampleFormControlInput1" className="form-label">Time</label>
-                                    <input type="date" class="form-control" id="addTime" required></input>
+                                    <input type="date" class="form-control" id="addTime" min={today} required></input>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Product Details</label>
