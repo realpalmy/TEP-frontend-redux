@@ -21,14 +21,14 @@ function ProductCard({ product, token }) {
 
     const tokenString = localStorage.getItem('token');
     const userToken = JSON.parse(tokenString);
-    const curUser = userToken[0].id
+    const curUser = userToken && userToken[0].id;
     console.log(curUser)
     let x;
     if (timeBetween > 0) {
         x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
-    } else if(product.winnerBid == userToken[0].id){
+    } else if (product.winnerBid == curUser) {
         x = 'Your Winner';
-    }else{
+    } else {
         x = 'End time Bid';
     }
 

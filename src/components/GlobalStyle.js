@@ -125,6 +125,11 @@ header.masthead {
     border: 0px solid rgba(255, 255, 255, 0);   
     background: linear-gradient(to bottom, #283048, #859398);
 }
+
+.bg-timeout{
+    border: 0px solid rgba(255, 255, 255, 0);   
+    background: linear-gradient(to bottom, #283048, #859398);
+}
 `;
 
 export default GlobalStyle;

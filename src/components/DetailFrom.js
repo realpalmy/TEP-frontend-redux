@@ -5,6 +5,7 @@ import moment from 'moment';
 
 export function DetailProduct({ className, productId }) {
     const [products, setProducts] = useState([]);
+    const [user, setUser] = useState([]);
     let [time, settime] = useState();
     let [bid, setBid] = useState();
 
@@ -40,13 +41,23 @@ export function DetailProduct({ className, productId }) {
         getProducts();
     }, [bid]);
 
+    useEffect(() => {
+        async function getUser() {
+            const users = await axios.get(
+                `http://localhost:8000/login/${products.winnerBid}`
+            );
+            setUser(users.data);
+        }
+        getUser();
+    }, [products.winnerBid]);
+
     const onBid = async (event) => {
         event.preventDefault();
         setBid(Number.parseInt(event.target.bid.value));
         axios.put(`http://localhost:8000/products/update/${products.id}`, {
             currentBid: Number.parseInt(event.target.bid.value),
             userid: userToken[0].id,
-            winnerBid : userToken[0].id
+            winnerBid: userToken[0].id
         })
     }
 
@@ -84,7 +95,7 @@ export function DetailProduct({ className, productId }) {
                                     </div>
                                     <div className="product-detail d-flex text-secondary" style={{ display: 'flex' }}>
                                         <h5><strong>Higher Bid!!! </strong></h5>
-                                        <h2 className=""><strong>Mr. K</strong></h2>
+                                        <h2 className=""><strong>{user.username}</strong></h2>
                                     </div>
                                 </ul>
                                 <div className="ms-3 show-time col-lg-3 align-self-start mt-5 mb-4">
@@ -101,15 +112,15 @@ export function DetailProduct({ className, productId }) {
                                 <form className="input-group rounded-pill d-flex" onSubmit={onBid}>
                                     <div className="d-flex">
                                         <div className="search-icon">
-                                        <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
+                                            <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
+                                        </div>
+                                        <div className="d-flex ">
+                                            <input className="ms-1 form-control col-lg-6 col-md-6 col-sm-12 rounded-pill text-secondary me-2" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
+                                            <button type="submit" className="btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1">Submit A Bid</button>
+                                            <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1">BUY NOW</button>
+                                        </div>
                                     </div>
-                                    <div className="d-flex ">
-                                        <input className="ms-1 form-control col-lg-6 col-md-6 col-sm-12 rounded-pill text-secondary me-2" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
-                                        <button type="submit" className="btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1">Submit A Bid</button>
-                                        <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1">BUY NOW</button>
-                                    </div>
-                                    </div>
-                                    
+
                                 </form>
                             </div>
                         </div>
