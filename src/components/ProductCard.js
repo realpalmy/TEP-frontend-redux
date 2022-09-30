@@ -4,11 +4,12 @@ import { GiTakeMyMoney } from "react-icons/gi";
 import { MdAttachMoney } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-
+import axios from 'axios';
 
 function ProductCard({ product, token }) {
     const targetTime = moment(product.countDown);
     const [currentTime, setCurrentTime] = useState(moment());
+    const [user, setUser] = useState([]);
     const timeBetween = moment.duration(targetTime.diff(currentTime));
     let styledisable = `btn-lg bg-4E598C rounded-pill p-2 text-white mx-3`;
     let disabled = false;
@@ -19,6 +20,16 @@ function ProductCard({ product, token }) {
         }, 1000);
         return () => clearInterval(interval);
     }, []);
+
+    useEffect(() => {
+        async function getUser() {
+            const users = await axios.get(
+                `http://localhost:8000/login/${product.winnerBid}`
+            );
+            setUser(users.data);
+        }
+        getUser();
+    }, [product.winnerBid]);
 
 
     const tokenString = localStorage.getItem('token');
@@ -51,9 +62,9 @@ function ProductCard({ product, token }) {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">
                             <div className="row">
-                                <div className="d-flex col-12 show-high text-center text-primary align-items-center" style={{ display: 'flex' }}>
-                                    <div className="ms-5 me-5">Higher Bid!! : </div>
-                                    <div className="">Mr. K</div>
+                                <div className="d-flex col-12 show-high text-center text-primary align-items-center pb-2" style={{ display: 'flex' }}>
+                                    <div className="ms-5 me-3">Higher Bid!! : </div>
+                                    <div className="">{user.username}</div>
                                 </div>
                                 <div className="col-2 d-flex align-items-center">
                                     <div className="text-success"><GiTakeMyMoney size={25} /></div>
