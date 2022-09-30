@@ -8,6 +8,7 @@ import AddProduct from './pages/AddproductPage';
 import BidOffers from './pages/BidOffers';
 import YourSelling from './pages/YourSelling';
 import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Switch } from 'react-router-dom';
 import GlobalStyle from './components/GlobalStyle';
 
 import useToken from './components/useToken';
@@ -27,21 +28,31 @@ function App() {
     );
   }
 
+  // if(!token || token.length === 0) {
+  //   return (
+  //     <>
+  //       <GlobalStyle />
+  //       <LoginPages setToken={setToken} />
+  //     </>
+  //   );
+  // }
+
+  
   return (
     <Fragment>
       <GlobalStyle />
       <Routes>
+
         <Route path="/" element={<Home />} />
-        <Route path="/LoginPages" element={<LoginPages />} />
-        <Route path="/WatchList" element={<WatchList />} />
-        <Route path="/OnProducts/:id" element={<OnProducts />} />
+        <Route path="/LoginPages" element={<LoginPages setToken={setToken}/>} />
+        <Route path="/BidLoginPages/:id" element={token ? <DetailProduct /> : <LoginPages setToken={setToken}/>} />
+        <Route path="/WatchList" element={ token ? <WatchList /> : <LoginPages setToken={setToken} />} />
+        <Route path="/OnProducts/:id" element={<OnProducts token={token}/>} /> {/*ShowProduct => ProductCard*/}
         <Route path="/DetailProduct/:id" element={<DetailProduct />} />
         <Route path='/AddProduct' element={<AddProduct />} />
         <Route path='/BidOffers/:userid' element={<BidOffers />} />
         <Route path='/YourSelling/:userid' element={<YourSelling />} />
       </Routes>
-
-
     </Fragment >
   );
 }

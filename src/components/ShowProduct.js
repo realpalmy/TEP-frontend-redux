@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-export function ShowProduct({ className, categoryID }) {
+export function ShowProduct({ className, categoryID, token }) {
     const [products, setProducts] = useState([]);
     const uslAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : `http://localhost:8000/products/category/${categoryID}`
     useEffect(() => {
@@ -27,7 +27,7 @@ export function ShowProduct({ className, categoryID }) {
                             products.length > 0 ? (
                                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                                     {products.map((product) => (
-                                        <ProductCard product={product} />
+                                        <ProductCard product={product} token={token} />
                                     ))}
                                 </div>
                             ) : (

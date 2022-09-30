@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 
-function ProductCard({ product }) {
+function ProductCard({ product, token }) {
     const targetTime = moment(product.countDown);
     const [currentTime, setCurrentTime] = useState(moment());
     const timeBetween = moment.duration(targetTime.diff(currentTime));
@@ -69,9 +69,9 @@ function ProductCard({ product }) {
 
                     </ul>
 
-                    <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center">
+                    <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center"> BidLoginPages
 
-                        <Link to={`/DetailProduct/${product.id}`} class="text-light text-decoration-none">
+                        <Link to={token ? `/DetailProduct/${product.id}` : `/BidLoginPages/${product.id}`} class="text-light text-decoration-none">
                             <button className="btn btn-primary rounded-pill bg-gradient" type="button">
                                 Submit A Bid
                             </button>
