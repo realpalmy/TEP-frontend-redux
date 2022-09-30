@@ -138,7 +138,7 @@ export function DetailProduct({ className, productId }) {
                                         </div>
                                         <div className="d-flex ">
                                             <input className="ms-1 form-control col-lg-6 col-md-6 col-sm-12 rounded-pill text-secondary me-2" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
-                                            <button type="submit" className={styledisable}>Submit A Bid</button>
+                                            <button type="submit" className={styledisable} disabled={disabled}>Submit A Bid</button>
                                             <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1" onClick={endBit}>BUY NOW</button>
                                         </div>
                                     </div>
