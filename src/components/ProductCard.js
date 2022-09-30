@@ -15,27 +15,18 @@ function ProductCard({ product }) {
         const interval = setInterval(() => {
             setCurrentTime(moment());
         }, 1000);
-
         return () => clearInterval(interval);
     }, []);
 
 
-    // const countDownDate = new Date(product.countDown).getTime();
-    // var x = setInterval(function () {
-    //     let now = new Date().getTime();
-    //     let distance = countDownDate - now;
-    //     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    //     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    //     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    //     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    let x;
+    if (timeBetween > 0) {
+        x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
+    } else {
+        x = 'End time Bid';
+    }
 
-    //     settime(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
 
-    //     if (distance < 0) {
-    //         settime('End Time Bid');
-    //     }
-
-    // }, 1100);
 
     return (
         <>
@@ -73,7 +64,7 @@ function ProductCard({ product }) {
 
                         <li className="list-group-item">
                             <div className="row">
-                                <div className="col-8 border-end text-center text-danger">{`${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`}</div>
+                                <div className="col-8 border-end text-center text-danger">{x}</div>
                                 <div className="col-4 text-center text-success">{product.bitAmount} bid(s)</div>
                             </div>
                         </li>

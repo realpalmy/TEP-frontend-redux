@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import moment from 'moment';
 
 export function DetailProduct({ className, productId }) {
     const [products, setProducts] = useState([]);
     let [time, settime] = useState();
     let [bid, setBid] = useState();
 
+    const targetTime = moment(products.countDown);
+    const [currentTime, setCurrentTime] = useState(moment());
+    const timeBetween = moment.duration(targetTime.diff(currentTime));
 
-    const countDownDate = new Date(products.countDown).getTime();
-    var x = setInterval(function () {
-        let now = new Date().getTime();
-        let distance = countDownDate - now;
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTime(moment());
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
 
-        // Output the result in an element with id="demo"
-        settime(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
-    }, 1000);
+
+    let x;
+    if (timeBetween > 0) {
+        x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
+    } else {
+        x = 'End time Bid';
+    }
 
     useEffect(() => {
         async function getProducts() {
@@ -90,7 +96,7 @@ export function DetailProduct({ className, productId }) {
                         <h6 class="">This Auction Ends in:</h6>
                         <div class="show-count">
                             <div class="countdown">
-                                <div id="bid_counter1">{time}</div>
+                                <div id="bid_counter1">{x}</div>
                             </div>
                         </div>
                     </div>
