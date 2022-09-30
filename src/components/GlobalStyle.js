@@ -119,11 +119,8 @@ header.masthead {
     background-image: linear-gradient(to top, #ed213a, #93291e);
 }
 
-.bg-disabled{
-    cursor: not-allowed;
-    pointer-events: none;
-    border: 0px solid rgba(255, 255, 255, 0);   
-    background: linear-gradient(to bottom, #283048, #859398);
+.disabled{
+      background: linear-gradient(to bottom, #005c97, #363795);
 }
 `;
 
