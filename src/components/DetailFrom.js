@@ -7,6 +7,7 @@ export function DetailProduct({ className, productId }) {
     const [products, setProducts] = useState([]);
     let [time, settime] = useState();
     let [bid, setBid] = useState();
+    let [key, setKey] = useState(0);
 
     const targetTime = moment(products.countDown);
     const [currentTime, setCurrentTime] = useState(moment());
@@ -38,7 +39,7 @@ export function DetailProduct({ className, productId }) {
             setProducts(products.data);
         }
         getProducts();
-    }, [products]); //[bid]
+    }, [key]); //[bid]
 
     const onBid = async (event) => {
         event.preventDefault();
@@ -48,6 +49,7 @@ export function DetailProduct({ className, productId }) {
             userid: userToken[0].id,
             winnerBid : userToken[0].id
         })
+        setKey(oldKey => oldKey +1)
     }
 
     const endBit = async (event) => {
@@ -57,6 +59,7 @@ export function DetailProduct({ className, productId }) {
             time: "0000-00-00",
             winnerBid : userToken[0].id
         })
+        setKey(oldKey => oldKey +1)
     }
 
     return (
