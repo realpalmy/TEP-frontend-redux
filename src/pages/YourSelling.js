@@ -15,7 +15,7 @@ function YourSelling() {
                 <Navbar />
                 <HeadOnPeoduct text="Your On Selling Product" />
             </ContainerNavbar>
-            <ShowProduct categoryID={`${userid}`} />
+            <ShowProduct categoryID={`YourSell`} />
         </Fragment >
     );
 }
