@@ -69,7 +69,7 @@ function ProductCard({ product, token }) {
 
                     </ul>
 
-                    <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center"> BidLoginPages
+                    <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center"> 
 
                         <Link to={token ? `/DetailProduct/${product.id}` : `/BidLoginPages/${product.id}`} class="text-light text-decoration-none">
                             <button className="btn btn-primary rounded-pill bg-gradient" type="button">
