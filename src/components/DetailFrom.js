@@ -65,13 +65,17 @@ export function DetailProduct({ className, productId }) {
                                 </ul>
                             </div>
                             <ul class="show-price mb-4">
-                                <div class="product-detail d-flex " style={{ display: 'flex' }}>
+                                <div class="product-detail d-flex text-success" style={{ display: 'flex' }}>
                                     <h5>Current Price</h5>
-                                    <h2 class="text-danger">${products.currentBid}</h2>
+                                    <h2 class="">${products.currentBid}</h2>
                                 </div>
-                                <div class="product-detail d-flex " style={{ display: 'flex' }}>
+                                <div class="product-detail d-flex text-primary" style={{ display: 'flex' }}>
                                     <h5>Bid Increment (US)</h5>
                                     <h2>$50</h2>
+                                </div>
+                                <div class="product-detail d-flex text-danger" style={{ display: 'flex' }}>
+                                    <h5 >Buy Now </h5>
+                                    <h2 class="">$50.00</h2>
                                 </div>
                             </ul>
                             <div class="bid-area mb-2">
@@ -184,6 +188,12 @@ ul li {
 }
 .detail-content {
     margin-top: -8rem;
+}
+.btn-disabled{
+    cursor: not-allowed;
+    pointer-events: none;
+    border: 0px solid rgba(255, 255, 255, 0);   
+    background: linear-gradient(to bottom, #283048, #859398);
 }
 
 `;
