@@ -51,6 +51,10 @@ function ProductCard({ product, token }) {
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item">
                             <div className="row">
+                                <div className="d-flex col-12 show-high text-center text-primary align-items-center" style={{ display: 'flex' }}>
+                                    <div className="ms-5 me-5">Higher Bid!! : </div>
+                                    <div className="">Mr. K</div>
+                                </div>
                                 <div className="col-2 d-flex align-items-center">
                                     <div className="text-success"><GiTakeMyMoney size={25} /></div>
                                 </div>
