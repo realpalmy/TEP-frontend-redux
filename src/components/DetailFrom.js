@@ -107,7 +107,7 @@ export function DetailProduct({ className, productId }) {
                                     </div>
                                     <div className="product-detail d-flex text-secondary" style={{ display: 'flex' }}>
                                         <h5><strong>Higher Bid!!! </strong></h5>
-                                        <h2 className=""><strong>{user.name}</strong></h2>
+                                        <h2 className=""><strong>{user.username}</strong></h2>
                                     </div>
                                 </ul>
                                 <div className="ms-3 show-time col-lg-3 align-self-start mt-5 mb-4">
