@@ -20,8 +20,7 @@ function App() {
     setTk(token)
   },[token])
 
-  console.log(typeof(token), token[0].token);
-
+  console.log(token && token[0].token)
 
   return (
     <Fragment>
