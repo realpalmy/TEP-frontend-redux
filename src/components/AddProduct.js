@@ -5,6 +5,9 @@ export default function AddProduct() {
     const [file, setFile] = useState();
     const [urlFile, setUrlFile] = useState();
 
+    const tokenString = localStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+
     let today = new Date();
     let dd = today.getDate();
     let mm = today.getMonth() + 1; //January is 0 so need to add 1 to make it 1!
@@ -47,9 +50,9 @@ export default function AddProduct() {
             detail: event.target.productDetail.value,
             currentBid: event.target.startPrice.value,
             buyNow: event.target.finalPrice.value,
-            bitAmount: 0,
+            bitAmount: [],
             countDown: event.target.addTime.value,
-            owner: 0,
+            owner: userToken[0].id,
             winnerBid: 0,
         }).then((response) => {
             console.log(response);
