@@ -8,7 +8,7 @@ export function ShowProduct({ className, categoryID, token }) {
     const tokenString = localStorage.getItem('token');
     const userToken = JSON.parse(tokenString);
 
-    const uslAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : categoryID == 'onOffers' ? `http://localhost:8000/products/onbid/${userToken[0].id}` : `http://localhost:8000/products/category/${categoryID}`
+    const uslAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : categoryID == 'onOffers' ? `http://localhost:8000/products/onbid/${userToken[0].id}` : categoryID == 'YourSelling' ? `http://localhost:8000/products/owner/${userToken[0].id}` : `http://localhost:8000/products/category/${categoryID}`
 
     useEffect(() => {
         async function getProducts() {

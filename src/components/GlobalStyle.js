@@ -127,9 +127,16 @@ header.masthead {
     border: 0px solid rgba(255, 255, 255, 0);   
     background: linear-gradient(to bottom, #283048, #859398);
 }
-
-.show-high {
-    border-bottom: 1px solid #e0e0f1;
+.bg-delete{
+    border: 0px solid rgba(255, 255, 255, 0);
+    background: linear-gradient(to bottom, #c31432, #240b36); 
+}
+.bg-delete:hover {
+    border: 0px solid rgba(255, 255, 255, 0);
+    background: linear-gradient(to top, #c31432, #240b36); 
+}
+.hide-block{
+    display: none;
 }
 `;
 
