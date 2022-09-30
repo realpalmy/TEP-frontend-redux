@@ -23,24 +23,11 @@ async function fetchToken(userIn) {
             return userRight;
         } else {
             alert('wrong username or password');
-            return [];
+            return null;
         }
 
     }
 }
-
-/*
-async function loginUser(credentials) {
-    return fetch('http://localhost:8000/login/user', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-    .then(data => data.json())
-}
-*/
 
 export default function Login({ setToken }) {
     const [username, setUserName] = useState();
@@ -49,7 +36,6 @@ export default function Login({ setToken }) {
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await fetchToken({
-        //const token = await loginUser({
             username,
             password    
         });
