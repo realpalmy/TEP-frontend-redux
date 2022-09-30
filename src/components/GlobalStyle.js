@@ -108,6 +108,16 @@ header.masthead {
 .bg-productHome{
     background-image: linear-gradient(to bottom, #F5F5F5, #fee1c6, #ffc697, #ffaa6b, #ff8c42);
 }
+
+.bg-watchlist{
+    border: 0px solid rgba(255, 255, 255, 0);
+    background-image: linear-gradient(to bottom, #8e9eab, #eef2f3);
+}
+
+.bg-watchlist:hover {
+    border: 0px solid rgba(255, 255, 255, 0);
+    background-image: linear-gradient(to top, #bdc3c7, #2c3e50);;
+}
 `;
 
 export default GlobalStyle;

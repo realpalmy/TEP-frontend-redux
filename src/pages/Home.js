@@ -15,8 +15,8 @@ function Home() {
                 <SectionOne />
             </ContainerNavbar>
             <Category />
-            <Products />
-            <Products showbg="Show" />
+            <Products categoryID={`${1}`} />
+            <Products showbg="Show" categoryID={`${2}`} />
             <Footer position="Home" />
         </Fragment >
     );

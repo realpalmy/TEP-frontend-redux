@@ -82,7 +82,7 @@ export default styled(Category)`
 }
 
 .size-img-category-watch{
-    width: 80%;
+    width: 70%;
     height: 5rem;
     margin-top: 2rem;
 }
