@@ -1,26 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./test.css";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { MdAttachMoney } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+
 
 function ProductCard({ product }) {
-    let [time, settime] = useState();
-    var countDownDate = new Date(product.countDown).getTime();
-    var x = setInterval(function () {
-        const now = new Date().getTime();
-        let distance = countDownDate - now;
-        let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const targetTime = moment(product.countDown);
+    const [currentTime, setCurrentTime] = useState(moment());
+    const timeBetween = moment.duration(targetTime.diff(currentTime));
 
-        settime(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentTime(moment());
+        }, 1000);
 
-        if (distance < 0) {
-            settime('End Time Bid');
-        }
-    }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+
+    // const countDownDate = new Date(product.countDown).getTime();
+    // var x = setInterval(function () {
+    //     let now = new Date().getTime();
+    //     let distance = countDownDate - now;
+    //     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    //     settime(days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+
+    //     if (distance < 0) {
+    //         settime('End Time Bid');
+    //     }
+
+    // }, 1100);
 
     return (
         <>
@@ -58,7 +73,7 @@ function ProductCard({ product }) {
 
                         <li className="list-group-item">
                             <div className="row">
-                                <div className="col-8 border-end text-center text-danger">{time}</div>
+                                <div className="col-8 border-end text-center text-danger">{`${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`}</div>
                                 <div className="col-4 text-center text-success">{product.bitAmount} bid(s)</div>
                             </div>
                         </li>
