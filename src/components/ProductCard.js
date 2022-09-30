@@ -10,6 +10,8 @@ function ProductCard({ product, token }) {
     const targetTime = moment(product.countDown);
     const [currentTime, setCurrentTime] = useState(moment());
     const timeBetween = moment.duration(targetTime.diff(currentTime));
+    let styledisable = `btn-lg bg-4E598C rounded-pill p-2 text-white mx-3`;
+    let disabled = false;
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -28,8 +30,12 @@ function ProductCard({ product, token }) {
         x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
     } else if (product.winnerBid == curUser) {
         x = 'Your Winner';
+        styledisable = `btn-lg rounded-pill p-2 text-white mx-3 disabled`;
+        disabled = true;
     } else {
         x = 'End time Bid';
+        styledisable = `btn-lg rounded-pill p-2 text-white mx-3 disabled`;
+        disabled = true;
     }
 
     return (
@@ -79,7 +85,8 @@ function ProductCard({ product, token }) {
 
                         <Link to={token ? `/DetailProduct/${product.id}` : `/BidLoginPages/${product.id}`} class="text-light text-decoration-none">
                             <button
-                                disabled type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3 disabled">
+                                disabled={disabled}
+                                type="submit" class={styledisable}>
                                 Submit A Bid
                             </button>
                         </Link>

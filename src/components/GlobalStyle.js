@@ -120,7 +120,7 @@ header.masthead {
 }
 
 .disabled{
-      background: linear-gradient(to bottom, #005c97, #363795);
+      background: linear-gradient(to bottom, #ed213a, #93291e);
 }
 
 .bg-timeout{
