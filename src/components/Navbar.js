@@ -1,8 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import useToken from './useToken';
 
 function Navbar({ className }) {
+    //const {token, setToken} = React.useState(JSON.parse(localStorage.getItem('token')));
+    const token = JSON.parse(localStorage.getItem('token'));
+    const{token : tk, setToken} = useToken()
+
+    const x = () => {
+        localStorage.clear();
+        window.location.reload();
+    }
+
+    // JSON.parse(localStorage.getItem('token'));
+
     return (
         <div className='w-100'>
             <div className={className}>
@@ -99,7 +111,10 @@ function Navbar({ className }) {
                                 </div>
                                 <div className='col-2 text-end'>
                                     <Link to="/LoginPages">
-                                        <i class="bi bi-person-bounding-box fs-1 text-white"></i>
+                                        {
+                                        token ? (<i class="bi bi-box-arrow-right fs-1 text-white" onClick={x}></i>) :
+                                                (<i class="bi bi-person-bounding-box fs-1 text-white"></i>)
+                                        }
                                     </Link>
                                 </div>
                             </span>
@@ -110,8 +125,8 @@ function Navbar({ className }) {
             </div>
         </div>
     );
-}
 
+                                    }
 /*
 .navbar {
     padding: 0 10rem 0 10rem;

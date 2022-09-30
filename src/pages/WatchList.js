@@ -5,6 +5,10 @@ import WatchListProductSection from '../components/WatchListProductSection';
 import Footer from '../components/Footer';
 
 function WatchList() {
+    // if(!localStorage.getItem('token')) {
+    //     window.location.href = '/LoginPages'
+    //     return <></>
+    // }
     return (
         <Fragment>
             <ContainerNavbar position="WatchList">

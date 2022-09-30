@@ -15,8 +15,14 @@ import useToken from './components/useToken';
 function App() {
 
   const { token, setToken } = useToken();
-  console.log(token)
+  const [tk , setTk] = useState()
+  useEffect(() =>{
+    setTk(token)
+  },[token])
 
+  console.log({tk});
+
+ 
   // if(!token || token.length === 0) {
   //   return (
   //     <>
@@ -33,14 +39,15 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-        <Route path="/LoginPages" element={<LoginPages setToken={setToken}/>} />
-        <Route path="/BidLoginPages/:id" element={token ? <DetailProduct /> : <LoginPages setToken={setToken}/>} />
-        <Route path="/WatchList" element={ token ? <WatchList /> : <LoginPages setToken={setToken} />} />
+        <Route path="/LoginPages" element={tk ? <Home /> : <LoginPages setToken={setToken}/>} />
+        <Route path="/BidLoginPages/:id" element={tk ? <DetailProduct /> : <LoginPages setToken={setToken}/>} />
+        <Route path="/WatchList" element={tk ? <WatchList /> : <LoginPages setToken={setToken} />} />
         <Route path="/OnProducts/:id" element={<OnProducts token={token}/>} /> {/*ShowProduct => ProductCard*/}
         <Route path="/DetailProduct/:id" element={<DetailProduct />} />
-        <Route path='/AddProduct' element={token ? <AddProduct /> : <LoginPages setToken={setToken} />} />
-        <Route path='/BidOffers/:userid' element={token ? <BidOffers /> : <LoginPages setToken={setToken} />} />
-        <Route path='/YourSelling/:userid' element={token ? <YourSelling /> : <LoginPages setToken={setToken} />} />
+        <Route path='/AddProduct' element={tk ? <AddProduct /> : <LoginPages setToken={setToken} />} />
+        <Route path='/BidOffers/:userid' element={tk ? <BidOffers /> : <LoginPages setToken={setToken} />} />
+        <Route path='/YourSelling/:userid' element={tk ? <YourSelling /> : <LoginPages setToken={setToken} />} />
+      
       </Routes>
     </Fragment >
   );
