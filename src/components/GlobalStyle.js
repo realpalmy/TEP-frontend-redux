@@ -125,6 +125,11 @@ header.masthead {
     border: 0px solid rgba(255, 255, 255, 0);   
     background: linear-gradient(to bottom, #283048, #859398);
 }
+
+.show-high {
+    // justify-content: space-between;
+    border-bottom: 1px solid #e0e0f1;
+}
 `;
 
 export default GlobalStyle;
