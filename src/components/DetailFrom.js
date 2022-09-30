@@ -8,6 +8,7 @@ export function DetailProduct({ className, productId }) {
     const [user, setUser] = useState([]);
     let [time, settime] = useState();
     let [bid, setBid] = useState();
+    let [key, setKey] = useState(0);
 
     const targetTime = moment(products.countDown);
     const [currentTime, setCurrentTime] = useState(moment());
@@ -39,7 +40,7 @@ export function DetailProduct({ className, productId }) {
             setProducts(products.data);
         }
         getProducts();
-    }, [bid]);
+    }, [key]); //[bid]
 
     useEffect(() => {
         async function getUser() {
@@ -59,6 +60,17 @@ export function DetailProduct({ className, productId }) {
             userid: userToken[0].id,
             winnerBid: userToken[0].id
         })
+        setKey(oldKey => oldKey +1)
+    }
+
+    const endBit = async (event) => {
+        event.preventDefault();
+        console.log("end pls")
+        axios.put(`http://localhost:8000/products/buynow/${products.id}`, {
+            time: "0000-00-00",
+            winnerBid : userToken[0].id
+        })
+        setKey(oldKey => oldKey +1)
     }
 
     return (
@@ -121,6 +133,13 @@ export function DetailProduct({ className, productId }) {
                                         </div>
                                     </div>
 
+                                    <div className="d-flex ">
+                                        <input className="ms-1 form-control col-lg-6 col-md-6 col-sm-12 rounded-pill text-secondary me-2" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
+                                        <button type="submit" className="btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1">Submit A Bid</button>
+                                        <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1" onClick={endBit}>BUY NOW</button>
+                                    </div>
+                                    </div>
+                                    
                                 </form>
                             </div>
                         </div>
