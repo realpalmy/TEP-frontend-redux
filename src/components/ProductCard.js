@@ -31,11 +31,10 @@ function ProductCard({ product, token }) {
         getUser();
     }, [product.winnerBid]);
 
-
     const tokenString = localStorage.getItem('token');
     const userToken = JSON.parse(tokenString);
-    const curUser = userToken?.[0].username;
-    console.log(curUser)
+    const curUser = userToken?.[0].id;
+    //console.log(curUser)
     
     let x;
     if (timeBetween > 0) {
@@ -48,6 +47,12 @@ function ProductCard({ product, token }) {
         x = 'End time Bid';
         styledisable = `btn-lg rounded-pill p-2 text-white mx-3 disabled`;
         disabled = true;
+    }
+
+    function deleteFunc (id) {
+        axios.delete(`http://localhost:8000/products/${id}`)
+        .then(() => alert('Delete successful'));
+        window.location.reload();
     }
 
     return (
@@ -108,7 +113,7 @@ function ProductCard({ product, token }) {
                         </Link>
 
                         <div class={curUser == product.owner ? 'text-light text-decoration-none' : 'text-light text-decoration-none hide-block'}>
-                            <button type="submit" class="btn-lg bg-delete rounded-pill p-2 text-white mx-5 px-4">
+                            <button type="submit" class="btn-lg bg-delete rounded-pill p-2 text-white mx-5 px-4" onClick={() => {deleteFunc(product.id)}}>
                                 Delete
                             </button>
                         </div>
