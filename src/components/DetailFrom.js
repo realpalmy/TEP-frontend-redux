@@ -9,6 +9,8 @@ export function DetailProduct({ className, productId }) {
     let [time, settime] = useState();
     let [bid, setBid] = useState();
     let [key, setKey] = useState(0);
+    let styledisable = `btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1`;
+    let disabled = false;
 
     const targetTime = moment(products.countDown);
     const [currentTime, setCurrentTime] = useState(moment());
@@ -25,12 +27,7 @@ export function DetailProduct({ className, productId }) {
     }, []);
 
 
-    let x;
-    if (timeBetween > 0) {
-        x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
-    } else {
-        x = 'End time Bid';
-    }
+
 
     useEffect(() => {
         async function getProducts() {
@@ -71,6 +68,19 @@ export function DetailProduct({ className, productId }) {
             winnerBid: userToken[0].id
         })
         setKey(oldKey => oldKey + 1)
+    }
+
+    let x;
+    if (timeBetween > 0) {
+        x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
+    } else if (products.winnerBid == userToken[0].id) {
+        x = 'Your Winner';
+        styledisable = `btn-lg rounded-pill  text-white  px-5 me-1 disabled`;
+        disabled = true;
+    } else {
+        x = 'End time Bid';
+        styledisable = `btn-lg rounded-pill p-2 text-white mx-3 disabled`;
+        disabled = true;
     }
 
     return (
@@ -128,7 +138,7 @@ export function DetailProduct({ className, productId }) {
                                         </div>
                                         <div className="d-flex ">
                                             <input className="ms-1 form-control col-lg-6 col-md-6 col-sm-12 rounded-pill text-secondary me-2" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
-                                            <button type="submit" className="btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1">Submit A Bid</button>
+                                            <button type="submit" className={styledisable}>Submit A Bid</button>
                                             <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1" onClick={endBit}>BUY NOW</button>
                                         </div>
                                     </div>
