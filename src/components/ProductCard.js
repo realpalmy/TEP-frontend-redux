@@ -90,7 +90,11 @@ function ProductCard({ product, token }) {
                                 Submit A Bid
                             </button>
                         </Link>
-
+                        <div class="text-light text-decoration-none">
+                            <button type="submit" class="btn-lg bg-delete rounded-pill p-2 text-white mx-5 px-4">
+                                    Delete
+                            </button>
+                        </div>
                     </div>
 
                 </div>
