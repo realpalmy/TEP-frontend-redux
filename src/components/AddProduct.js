@@ -35,6 +35,8 @@ export default function AddProduct() {
     }
 
     const category = ["VEHICLES", "WATCH", "CAMERA", "JEWELRY", "SPORTS"];
+    const tokenString = localStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
 
     const SubmitHandler = (event) => {
         axios.post("http://localhost:8000/products/", {
@@ -49,7 +51,7 @@ export default function AddProduct() {
             buyNow: event.target.finalPrice.value,
             bitAmount: 0,
             countDown: event.target.addTime.value,
-            owner: 0,
+            owner: userToken[0].id,
             winnerBid: 0,
         }).then((response) => {
             console.log(response);
