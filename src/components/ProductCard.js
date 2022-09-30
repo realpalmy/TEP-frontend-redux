@@ -72,7 +72,7 @@ function ProductCard({ product, token }) {
                     <div className="card-body d-grid gap-2 col-lg-8 mx-auto text-center"> 
 
                         <Link to={token ? `/DetailProduct/${product.id}` : `/BidLoginPages/${product.id}`} class="text-light text-decoration-none">
-                            <button className="btn btn-primary rounded-pill bg-gradient" type="button">
+                            <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3 bg-disabled">
                                 Submit A Bid
                             </button>
                         </Link>
