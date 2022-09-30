@@ -34,8 +34,9 @@ function ProductCard({ product, token }) {
 
     const tokenString = localStorage.getItem('token');
     const userToken = JSON.parse(tokenString);
-    const curUser = userToken && userToken[0].id;
+    const curUser = userToken?.[0].username;
     console.log(curUser)
+    
     let x;
     if (timeBetween > 0) {
         x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
@@ -106,7 +107,7 @@ function ProductCard({ product, token }) {
                             </button>
                         </Link>
 
-                        <div class={userToken[0].id == product.owner ? 'text-light text-decoration-none' : 'text-light text-decoration-none hide-block'}>
+                        <div class={curUser == product.owner ? 'text-light text-decoration-none' : 'text-light text-decoration-none hide-block'}>
                             <button type="submit" class="btn-lg bg-delete rounded-pill p-2 text-white mx-5 px-4">
                                 Delete
                             </button>
