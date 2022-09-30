@@ -37,7 +37,7 @@ export function Category({ className }) {
                 <div class="col-12 row category-img category-card text-center d-flex justify-content-center">
                     <Link to='/OnProducts/4' class="text-decoration">
                         <div class="text-category">
-                            <img src="./image/02.png" class="size-img-category" alt="..." />
+                            <img src="./image/022.png" class="size-img-category" alt="..." />
                             <div class="dropshadow fs-5">JEWELRY</div>
                         </div>
                     </Link>
@@ -64,7 +64,7 @@ export function Category({ className }) {
                 <div class="col-12 row category-img category-card text-center d-flex justify-content-center ">
                     <Link to='/OnProducts/2' class="text-decoration">
                         <div class="text-category">
-                            <img src="./image/03.png" class="size-img-category-watch" alt="..." />
+                            <img src="./image/02.png" class="size-img-category-watch" alt="..." />
                             <div class="dropshadow fs-5">WATCH</div>
                         </div>
                     </Link>

@@ -29,7 +29,7 @@ export function Products({ className, showbg, categoryID }) {
                         <div className="row text-start mb-2">
                             <div class="d-flex">
                                 <div class="me-auto d-flex">
-                                    <img className="rounded float-start" src={"./image/01.png"} style={{ "width": "6rem" }} alt="" />
+                                    <img className="rounded float-start" src={`./image/0${categoryID}.png`} style={{ "width": "4rem" }} alt="" />
                                     <h2 className="col dropshadow ms-2 mt-2">{nameProduct}</h2>
                                 </div>
                             </div>
