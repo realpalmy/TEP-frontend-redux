@@ -109,14 +109,14 @@ header.masthead {
     background-image: linear-gradient(to bottom, #F5F5F5, #fee1c6, #ffc697, #ffaa6b, #ff8c42);
 }
 
-.bg-watchlist{
+.bg-buynow{
     border: 0px solid rgba(255, 255, 255, 0);
-    background-image: linear-gradient(to bottom, #8e9eab, #eef2f3);
+    background-image: linear-gradient(to bottom, #ed213a, #93291e);
 }
 
-.bg-watchlist:hover {
+.bg-buynow:hover {
     border: 0px solid rgba(255, 255, 255, 0);
-    background-image: linear-gradient(to top, #bdc3c7, #2c3e50);;
+    background-image: linear-gradient(to top, #ed213a, #93291e);
 }
 
 .bg-disabled{

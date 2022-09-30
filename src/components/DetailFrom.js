@@ -51,70 +51,76 @@ export function DetailProduct({ className, productId }) {
     }
 
     return (
-        <div class="margin-top-25rem ">
+        <div className="margin-top-25rem ">
             <div className={className} >
-                <div class="d-flex justify-content-md-center row col-12 mb-5 ">
-                    <div id="card-box" class="card rounded-5 col-sm-12 col-md-10 col-lg-8" style={{ width: "55rem" }}>
-                        <img src={products.imgUrl} class="size-img-bid" alt="..." />
+                <div className="d-flex justify-content-md-center row col-12 mb-5 ">
+                    <div id="card-box" className="card rounded-5 col-sm-12 col-md-10 col-lg-8" style={{ width: "55rem" }}>
+                        <img src={products.imgUrl} className="size-img-bid" alt="..." />
                     </div>
                 </div>
 
-                <div class=" d-flex p-5 row col-12 justify-content-md-center justify-content-start tap">
-                    <div class=" detail col-lg-8 col-md-8 col-sm-12 ">
-                        <div class="product-content">
-                            <div class="product-header" >
-                                <h1 class="col-12">{products.title}</h1>
+                <div className=" d-flex p-5 row col-12 justify-content-md-center justify-content-start tap">
+                    <div className=" detail col-lg-8 col-md-8 col-sm-12 ">
+                        <div className="product-content">
+                            <div className="product-header" >
+                                <h1 className="col-12">{products.title}</h1>
                                 <ul>
-                                    <li class="text-secondary">Listing ID: {products.id}</li>
+                                    <li className="text-secondary">Listing ID: {products.id}</li>
                                 </ul>
                             </div>
-                            <div class="row d-flex col-12 justify-content-md-center">
-                                <ul class="show-price mb-4 col-md-8 col-sm-12">
-                                    <div class="product-detail d-flex text-success" style={{ display: 'flex' }}>
+                            <div className="row d-flex col-12 justify-content-md-center">
+                                <ul className="show-price mb-4 col-md-8 col-sm-12">
+                                    <div className="product-detail d-flex text-success" style={{ display: 'flex' }}>
                                         <h5>Current Price</h5>
-                                        <h2 class="">${products.currentBid}</h2>
+                                        <h2 className="">${products.currentBid}</h2>
                                     </div>
-                                    <div class="product-detail d-flex text-primary" style={{ display: 'flex' }}>
+                                    <div className="product-detail d-flex text-primary" style={{ display: 'flex' }}>
                                         <h5>Bid Increment (US)</h5>
                                         <h2>$50</h2>
                                     </div>
-                                    <div class="product-detail d-flex text-danger" style={{ display: 'flex' }}>
+                                    <div className="product-detail d-flex text-danger" style={{ display: 'flex' }}>
                                         <h5 >Buy Now </h5>
-                                        <h2 class="">$50.00</h2>
+                                        <h2 className="">$50.00</h2>
+                                    </div>
+                                    <div className="product-detail d-flex text-secondary" style={{ display: 'flex' }}>
+                                        <h5><strong>Higher Bid!!! </strong></h5>
+                                        <h2 className=""><strong>Mr. K</strong></h2>
                                     </div>
                                 </ul>
-                                <div class="ms-3 show-time col-lg-3 align-self-start mt-5 mb-4">
-                                    <h6 class="">This Auction Ends in:</h6>
-                                    <div class="show-count">
-                                        <div class="countdown">
+                                <div className="ms-3 show-time col-lg-3 align-self-start mt-5 mb-4">
+                                    <h6 className="">This Auction Ends in:</h6>
+                                    <div className="show-count">
+                                        <div className="countdown">
                                             <div id="bid_counter1">{x}</div>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                            <div class="ms-0 bid-area mb-2 col-lg-8 col-md-8 col-sm-12">
-                                <form class="input-group rounded-pill" onSubmit={onBid}>
-                                    <div class="search-icon">
+                            <div className="ms-0 bid-area mb-2 col-lg-8 col-md-8 col-sm-12">
+                                <form className="input-group rounded-pill d-flex" onSubmit={onBid}>
+                                    <div className="d-flex">
+                                        <div className="search-icon">
                                         <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
                                     </div>
-                                    <input class="form-control col-lg-6 col-md-6 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
-                                    <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3 ">Submit A Bid</button>
+                                    <div className="d-flex ">
+                                        <input className="ms-1 form-control col-lg-6 col-md-6 col-sm-12 rounded-pill text-secondary me-2" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
+                                        <button type="submit" className="btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1">Submit A Bid</button>
+                                        <button type="button" className="btn-lg bg-buynow rounded-pill text-white  px-5 me-1">BUY NOW</button>
+                                    </div>
+                                    </div>
+                                    
                                 </form>
-                            </div>
-                            <div class="d-flex justify-content-center mt-3 mb-5 col-lg-8 col-md-8 col-sm-12">
-                                <button type="button" class="btn-lg bg-4E598C rounded-pill p-3 text-white px-5 mx-5">BUY NOW</button>
-
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row d-flex row col-12 justify-content-md-center tap">
-                    <div class="detail-content col-lg-8 col-md-10 col-sm-12">
-                        <div class="item mb-5">
-                            <h4 class="item-title mb-2">Detail</h4>
-                            <p class="mt-1 text-secondary">{products.detail}</p>
+                <div className="row d-flex row col-12 justify-content-md-center tap">
+                    <div className="detail-content col-lg-8 col-md-10 col-sm-12">
+                        <div className="item mb-5">
+                            <h4 className="item-title mb-2">Detail</h4>
+                            <p className="mt-1 text-secondary">{products.detail}</p>
                         </div>
                     </div>
                 </div>
