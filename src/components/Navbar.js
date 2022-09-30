@@ -36,7 +36,7 @@ function Navbar({ className }) {
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarResponsive">
-                            <ul class="navbar-nav ms-auto my-2 my-lg-0 py-3 dropshadow fs-5">
+                            <ul class="navbar-nav ms-auto my-2 my-lg-0 py-2 dropshadow fs-5">
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href='/'>
                                         <Link to="/" class="text-white text-decoration">
@@ -107,7 +107,7 @@ function Navbar({ className }) {
                                     </div>
                                 </li>
                             </ul>
-                            
+
                         </div>
 
                     </div>

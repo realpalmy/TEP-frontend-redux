@@ -35,7 +35,7 @@ function ProductCard({ product, token }) {
     const userToken = JSON.parse(tokenString);
     const curUser = userToken?.[0].id;
     //console.log(curUser)
-    
+
     let x;
     if (timeBetween > 0) {
         x = `${timeBetween.days()}d ${timeBetween.hours()}h ${timeBetween.minutes()}min ${timeBetween.seconds()} s`;
@@ -49,9 +49,9 @@ function ProductCard({ product, token }) {
         disabled = true;
     }
 
-    function deleteFunc (id) {
+    function deleteFunc(id) {
         axios.delete(`http://localhost:8000/products/${id}`)
-        .then(() => alert('Delete successful'));
+            .then(() => alert('Delete successful'));
         window.location.reload();
     }
 
@@ -113,7 +113,7 @@ function ProductCard({ product, token }) {
                         </Link>
 
                         <div class={curUser == product.owner ? 'text-light text-decoration-none' : 'text-light text-decoration-none hide-block'}>
-                            <button type="submit" class="btn-lg bg-delete rounded-pill p-2 text-white mx-5 px-4" onClick={() => {deleteFunc(product.id)}}>
+                            <button type="submit" class="btn-lg bg-delete rounded-pill p-2 text-white mx-5 px-4" onClick={() => { deleteFunc(product.id) }}>
                                 Delete
                             </button>
                         </div>

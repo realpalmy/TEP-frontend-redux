@@ -18,7 +18,7 @@ export function ShowProduct({ className, categoryID, token }) {
             setProducts(products.data);
         }
         getProducts();
-    }, [categoryID]);
+    }, [categoryID || []]);
 
 
 
