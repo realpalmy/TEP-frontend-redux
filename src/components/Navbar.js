@@ -36,7 +36,7 @@ function Navbar({ className }) {
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarResponsive">
-                            <ul class="navbar-nav ms-auto my-2 my-lg-0 dropshadow fs-5">
+                            <ul class="navbar-nav ms-auto my-2 my-lg-0 py-3 dropshadow fs-5">
                                 <li class="nav-item">
                                     <a class="nav-link text-white" href='/'>
                                         <Link to="/" class="text-white text-decoration">
@@ -96,23 +96,18 @@ function Navbar({ className }) {
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="nav-item">
+                                    <div className='text-end'>
+                                        <Link to="/LoginPages">
+                                            {
+                                                token ? (<i class="bi bi-box-arrow-right fs-1 text-white" onClick={x}></i>) :
+                                                    (<i class="bi bi-person-bounding-box fs-1 text-white"></i>)
+                                            }
+                                        </Link>
+                                    </div>
+                                </li>
                             </ul>
-                            <span class="navbar-text row d-flex justify-content-between align-items-center h-100 x">
-                                <div className='col-10'>
-                                    <form class="input-group rounded-pill">
-                                        <input class="form-control remove-bg rounded-pill search text-white" type="text" placeholder="Search any product..." />
-                                        <i class="bi bi-search m-2 text-white text-shadow"></i>
-                                    </form>
-                                </div>
-                                <div className='col-2 text-end'>
-                                    <Link to="/LoginPages">
-                                        {
-                                            token ? (<i class="bi bi-box-arrow-right fs-1 text-white" onClick={x}></i>) :
-                                                (<i class="bi bi-person-bounding-box fs-1 text-white"></i>)
-                                        }
-                                    </Link>
-                                </div>
-                            </span>
+                            
                         </div>
 
                     </div>
