@@ -1,6 +1,62 @@
-import React from 'react';
+import React , { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function Login() {
+
+async function fetchToken(userIn) {
+    let response = await fetch('http://localhost:8000/login');
+    console.log(response.status); // 200
+
+    if (response.status === 200) {
+        let data = await response.json();
+        
+        function check(user) {
+            if(user.username === userIn.username && user.password === userIn.password) {
+                console.log(user);
+                return user;
+            }
+        }
+        
+        const userRight = data.filter(check);
+        console.log(userRight)
+
+        if(userRight.length !== 0) {
+            return userRight;
+        } else {
+            alert('wrong username or password');
+            return [];
+        }
+
+    }
+}
+
+/*
+async function loginUser(credentials) {
+    return fetch('http://localhost:8000/login/user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(credentials)
+    })
+    .then(data => data.json())
+}
+*/
+
+export default function Login({ setToken }) {
+    const [username, setUserName] = useState();
+    const [password, setPassword] = useState();
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const token = await fetchToken({
+        //const token = await loginUser({
+            username,
+            password    
+        });
+        console.log(token)
+        setToken(token);
+    }
+
     return (
         <div class="row">
             <div class="col-lg-10 col-xl-9 mx-auto login">
@@ -17,17 +73,19 @@ export default function Login() {
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center fw-light fs-2 dropshadow font-weight-bold">HI !!, THERE</h5>
                         <p class="text-center dropshadow">you can login your account here !!!</p>
-                        <form>
-
+                        
+                        <form onSubmit={handleSubmit}>
                             <div class="form-floating mb-3">
-                                <input type="email" className="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus />
-
+                                <input type="email" className="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus 
+                                onChange={e => setUserName(e.target.value)}
+                                />
                                 <label for="floatingInputUsername">Username</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="password" className="form-control" id="floatingInputEmail" placeholder="name@example.com" />
-
+                                <input type="password" className="form-control" id="floatingInputEmail" placeholder="name@example.com" 
+                                onChange={e => setPassword(e.target.value)}
+                                />
                                 <label for="floatingInputEmail">Password</label>
                             </div>
 
@@ -35,7 +93,7 @@ export default function Login() {
                                 <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">LOGIN</button>
                             </div>
 
-                            <a class="d-block text-center mt-2 small">Don't have an account? Sign Up</a>
+                            <a class="d-block text-center mt-2 small" href='.'>Don't have an account? Sign Up</a>
 
                             <hr className="my-4" />
 
@@ -56,4 +114,8 @@ export default function Login() {
             </div>
         </div>
     );
+}
+
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
 }

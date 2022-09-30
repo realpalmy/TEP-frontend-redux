@@ -6,13 +6,13 @@ import Footer from '../components/Footer';
 
 
 
-function LoginPages() {
+function LoginPages({ setToken }) {
     return (
         <Fragment>
             <ContainerNavbar position="Login">
                 <Navbar />
             </ContainerNavbar>
-            <Login />
+            <Login setToken={setToken} />
             <Footer position="Login" />
         </Fragment >
     );
