@@ -20,19 +20,9 @@ function App() {
     setTk(token)
   },[token])
 
-  console.log({tk});
+  console.log(typeof(token), token[0].token);
 
- 
-  // if(!token || token.length === 0) {
-  //   return (
-  //     <>
-  //       <GlobalStyle />
-  //       <LoginPages setToken={setToken} />
-  //     </>
-  //   );
-  // }
 
-  
   return (
     <Fragment>
       <GlobalStyle />
