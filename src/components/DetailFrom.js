@@ -12,6 +12,9 @@ export function DetailProduct({ className, productId }) {
     const [currentTime, setCurrentTime] = useState(moment());
     const timeBetween = moment.duration(targetTime.diff(currentTime));
 
+    const tokenString = localStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentTime(moment());
@@ -43,6 +46,7 @@ export function DetailProduct({ className, productId }) {
         setBid(Number.parseInt(event.target.bid.value));
         axios.put(`http://localhost:8000/products/update/${products.id}`, {
             currentBid: Number.parseInt(event.target.bid.value),
+            userid: userToken[0].id
         })
     }
 
@@ -87,28 +91,25 @@ export function DetailProduct({ className, productId }) {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="ms-0 bid-area mb-2 col-lg-8 col-md-8 col-sm-12">
-                                    <form class="input-group rounded-pill" onSubmit={onBid}>
-                                        <div class="search-icon">
-                                            <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
-                                        </div>
-                                        <input class="form-control col-lg-6 col-md-6 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
-                                        <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3 ">Submit A Bid</button>
-                                    </form>
-                                </div>
-                                <div class="d-flex justify-content-center mt-3 mb-5 col-lg-8 col-md-8 col-sm-12">
-                                    <button type="button" class="btn-lg bg-4E598C rounded-pill p-3 text-white px-5 mx-5">BUY NOW</button>
-                                    <button type="button" class="btn-lg bg-watchlist rounded-pill p-3 text-dark px-3 mx-5">
-                                        <i class="bi bi-star "></i>
-                                        Add To WatchList
-                                    </button>
-                                </div>
+                                <form class="input-group rounded-pill" onSubmit={onBid}>
+                                    <div class="search-icon">
+                                        <img src="../image/search-icon.png" alt="..." style={{ width: "3rem", height: "3rem" }} />
+                                    </div>
+                                    <input class="form-control col-lg-6 col-md-6 col-sm-12 rounded-pill p-2 mx-3 text-secondary" type="number" placeholder="Enter your bid amount..." required min={products.currentBid + 50} id="bid" ></input>
+                                    <button type="submit" class="btn-lg bg-4E598C rounded-pill p-2 text-white mx-3 ">Submit A Bid</button>
+                                </form>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3 mb-5 col-lg-8 col-md-8 col-sm-12">
+                                <button type="button" class="btn-lg bg-4E598C rounded-pill p-3 text-white px-5 mx-5">BUY NOW</button>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row d-flex row col-12 justify-content-md-center tap">
                     <div class="detail-content col-lg-8 col-md-10 col-sm-12">
                         <div class="item mb-5">

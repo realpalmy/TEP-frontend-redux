@@ -5,7 +5,10 @@ import axios from 'axios';
 
 export function ShowProduct({ className, categoryID, token }) {
     const [products, setProducts] = useState([]);
-    const uslAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : `http://localhost:8000/products/category/${categoryID}`
+    const tokenString = localStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+
+    const uslAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : categoryID == 'onOffers' ? `http://localhost:8000/products/onbid/${userToken[0].id}` : `http://localhost:8000/products/category/${categoryID}`
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(

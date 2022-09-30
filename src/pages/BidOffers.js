@@ -14,7 +14,7 @@ function BidOffers() {
                 <Navbar />
                 <HeadOnPeoduct text="Your On Bid Product" />
             </ContainerNavbar>
-            <ShowProduct categoryID={`${userid}`} />
+            <ShowProduct categoryID={'onOffers'} />
         </Fragment >
     );
 }

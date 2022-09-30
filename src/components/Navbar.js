@@ -6,7 +6,7 @@ import useToken from './useToken';
 function Navbar({ className }) {
     //const {token, setToken} = React.useState(JSON.parse(localStorage.getItem('token')));
     const token = JSON.parse(localStorage.getItem('token'));
-    const{token : tk, setToken} = useToken()
+    const { token: tk, setToken } = useToken()
 
     const x = () => {
         localStorage.clear();
@@ -71,11 +71,6 @@ function Navbar({ className }) {
                                         </ul>
                                     </li>
                                 </ul>
-                                <li class="nav-item">
-                                    <a class="nav-link text-white" href="#portfolio">
-                                        <Link to="/Watchlist" class="text-white text-decoration">Watchlist</Link>
-                                    </a>
-                                </li>
                                 <li class="nav-item me-3">
                                     <ul class="navbar-nav">
                                         <li class="nav-item dropdown">
@@ -112,7 +107,7 @@ function Navbar({ className }) {
                                 <div className='col-2 text-end'>
                                     <Link to="/LoginPages">
                                         {
-                                        token ? (<i class="bi bi-box-arrow-right fs-1 text-white" onClick={x}></i>) :
+                                            token ? (<i class="bi bi-box-arrow-right fs-1 text-white" onClick={x}></i>) :
                                                 (<i class="bi bi-person-bounding-box fs-1 text-white"></i>)
                                         }
                                     </Link>
@@ -126,7 +121,7 @@ function Navbar({ className }) {
         </div>
     );
 
-                                    }
+}
 /*
 .navbar {
     padding: 0 10rem 0 10rem;
