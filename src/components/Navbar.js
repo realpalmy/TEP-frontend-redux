@@ -71,13 +71,20 @@ function Navbar({ className }) {
                                                 My TEP
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-primary">
-                                                <li><a class="dropdown-item" href=".">Bid/Offers</a></li>
+                                                <li>
+                                                    <Link to="/BidOffers/1" class="text-decoration dropdown-item">
+                                                        Bid/Offers
+                                                    </Link>
+                                                </li>
                                                 <li>
                                                     <Link to="/AddProduct" class="text-decoration dropdown-item">
                                                         Selling
                                                     </Link>
                                                 </li>
-                                                <li><a class="dropdown-item" href=".">Your Selling</a></li>
+                                                <li>
+                                                    <Link to="/YourSelling/1" class="text-decoration dropdown-item">
+                                                        Your Selling
+                                                    </Link></li>
                                             </ul>
                                         </li>
                                     </ul>

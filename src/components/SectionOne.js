@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export function SectionOne({ className }) {
     return (
@@ -24,9 +25,11 @@ export function SectionOne({ className }) {
                             Online Auction is where everyone goes to shop, sell,and give, while discovering variety and affordability.
                         </div>
                         <div class="mt-5 width-563">
-                            <button type="button" class="btn-lg bg-4E598C fs-4 rounded-pill p-2 text-white">
-                                Shop Now!
-                            </button>
+                            <Link to='/OnProducts/random' class="text-decoration dropdown-item">
+                                <button type="button" class="btn-lg bg-4E598C fs-4 rounded-pill p-2 text-white">
+                                    Shop Now!
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -26,11 +26,9 @@ function ProductCard({ product }) {
         x = 'End time Bid';
     }
 
-
-
     return (
         <>
-            <div className="col">
+            <div className="col mb-5">
                 <div className="shadow card" style={{ width: "20rem" }}>
                     <div className="card-body d-flex justify-content-center align-items-center" style={{ height: "15rem" }}>
                         <img className='rounded float-center img-fluid' style={{ "max-width": '100%', "max-height": '100%' }} src={product.imgUrl} alt="..." />
@@ -65,7 +63,7 @@ function ProductCard({ product }) {
                         <li className="list-group-item">
                             <div className="row">
                                 <div className="col-8 border-end text-center text-danger">{x}</div>
-                                <div className="col-4 text-center text-success">{product.bitAmount} bid(s)</div>
+                                <div className="col-4 text-center text-success">{product.bitAmount.length} bid(s)</div>
                             </div>
                         </li>
 

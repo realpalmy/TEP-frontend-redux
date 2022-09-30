@@ -5,18 +5,20 @@ import WatchList from './pages/WatchList';
 import OnProducts from './pages/OnProducts';
 import DetailProduct from './pages/DetailProduct';
 import AddProduct from './pages/AddproductPage';
+import BidOffers from './pages/BidOffers';
+import YourSelling from './pages/YourSelling';
 import { Routes, Route } from 'react-router-dom';
 import GlobalStyle from './components/GlobalStyle';
 
 import useToken from './components/useToken';
 
 function App() {
-  
+
   const { token, setToken } = useToken();
   console.log(token)
 
 
-  if(!token || token.length === 0) {
+  if (!token || token.length === 0) {
     return (
       <>
         <GlobalStyle />
@@ -24,7 +26,7 @@ function App() {
       </>
     );
   }
-  
+
   return (
     <Fragment>
       <GlobalStyle />
@@ -35,7 +37,8 @@ function App() {
         <Route path="/OnProducts/:id" element={<OnProducts />} />
         <Route path="/DetailProduct/:id" element={<DetailProduct />} />
         <Route path='/AddProduct' element={<AddProduct />} />
-
+        <Route path='/BidOffers/:userid' element={<BidOffers />} />
+        <Route path='/YourSelling/:userid' element={<YourSelling />} />
       </Routes>
 
 

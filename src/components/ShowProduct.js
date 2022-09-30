@@ -1,22 +1,21 @@
 import ProductCard from "./ProductCard";
 import React, { useState, useEffect } from 'react';
-import data from "../app/productData";
 import styled from 'styled-components';
 import axios from 'axios';
 
 export function ShowProduct({ className, categoryID }) {
     const [products, setProducts] = useState([]);
-
-
+    const uslAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : `http://localhost:8000/products/category/${categoryID}`
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
-                `http://localhost:8000/products/category/${categoryID}`
+                `${uslAPI}`
             );
             setProducts(products.data);
         }
         getProducts();
     }, [categoryID]);
+
 
 
     return (
