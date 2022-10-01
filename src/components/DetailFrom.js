@@ -27,8 +27,6 @@ export function DetailProduct({ className, productId }) {
     }, []);
 
 
-
-
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
@@ -113,7 +111,7 @@ export function DetailProduct({ className, productId }) {
                                     </div>
                                     <div className="product-detail d-flex text-danger" style={{ display: 'flex' }}>
                                         <h5 >Buy Now </h5>
-                                        <h2 className="">$50.00</h2>
+                                        <h2 className="">${products.buyNow}</h2>
                                     </div>
                                     <div className="product-detail d-flex text-secondary" style={{ display: 'flex' }}>
                                         <h5><strong>Higher Bid!!! </strong></h5>

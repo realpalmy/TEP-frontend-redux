@@ -35,7 +35,7 @@ export function ShowProduct({ className, categoryID, token }) {
                                     ))}
                                 </div>
                             ) : (
-                                <div>Loading products....</div>
+                                <div>No Products Displays....</div>
                             )
                         }
                     </div>

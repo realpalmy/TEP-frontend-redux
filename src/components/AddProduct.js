@@ -49,7 +49,7 @@ export default function AddProduct() {
             detail: event.target.productDetail.value,
             currentBid: event.target.startPrice.value,
             buyNow: event.target.finalPrice.value,
-            bitAmount: 0,
+            bitAmount: [],
             countDown: event.target.addTime.value,
             owner: userToken[0].id,
             winnerBid: 0,
