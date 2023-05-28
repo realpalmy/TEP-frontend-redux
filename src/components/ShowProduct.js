@@ -2,25 +2,31 @@ import ProductCard from "./ProductCard";
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
 
 export function ShowProduct({ className, categoryID, token }) {
     const [products, setProducts] = useState([]);
     const tokenString = localStorage.getItem('token');
-    const userToken = JSON.parse(tokenString);
+    const userToken = JSON.parse(tokenString);    
 
-    const uslAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : categoryID == 'onOffers' ? `http://localhost:8000/products/onbid/${userToken[0].id}` : categoryID == 'YourSelling' ? `http://localhost:8000/products/owner/${userToken[0].id}` : `http://localhost:8000/products/category/${categoryID}`
+    const urlAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : categoryID == 'onOffers' ? `http://localhost:8000/products/onbid/${userToken[0].id}` : categoryID == 'YourSelling' ? `http://localhost:8000/products/owner/${userToken[0].id}` : `http://localhost:8000/products/category/${categoryID}`
 
+    //randomProduct
+    //onBidProduct
+    //yourSellingProduct
+    //ownedProduct
+    //productByCategory
+
+    
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
-                `${uslAPI}`
+                `${urlAPI}`
             );
             setProducts(products.data);
         }
         getProducts();
     }, [categoryID]);
-
-
 
     return (
         <>

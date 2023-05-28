@@ -12,15 +12,26 @@ import GlobalStyle from './components/GlobalStyle';
 
 import useToken from './components/useToken';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { addToken, fetchToken } from './actions/tokenAction';
+
+
 function App() {
+
+  const tokenState = useSelector((state) => state.token);
+  const dispatch = useDispatch();
+
 
   const { token, setToken } = useToken();
   const [tk , setTk] = useState()
   useEffect(() =>{
     setTk(token)
+    dispatch(addToken(token));
   },[token])
 
   console.log(token && token[0].token)
+
+
 
   return (
     <Fragment>

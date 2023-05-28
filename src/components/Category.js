@@ -4,20 +4,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export function Category({ className }) {
-    // const [products, setProducts] = useState([]);
-
-    // useEffect(() => {
-    //     async function getProducts() {
-    //         const products = await axios.get(
-    //             'http://localhost:8000/products/'
-    //         );
-    //         setProducts(products.data);
-    //     }
-
-    //     getProducts();
-    // }, []);
-
-    // console.log(products);
     return (
         <div className={className}>
             <div class="d-flex justify-content-evenly col-12 row category ">

@@ -5,22 +5,13 @@ import styled from 'styled-components';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProducts } from "../actions/productAction";
+
 export function Products({ className, showbg, categoryID }) {
-    const [products, setProducts] = useState([]);
-    const [nameProduct, setNameProduct] = useState('');
-
-    useEffect(() => {
-        async function getProducts() {
-            const products = await axios.get(
-                `http://localhost:8000/products/category/${categoryID}`
-            );
-
-            setProducts(products.data);
-            setNameProduct(products.data[0].category.caregoryName);
-        }
-        getProducts();
-    }, [categoryID]);
-
+    const products = useSelector((state) => state.products);
+    const productByCategory = products.filter((products) => products.category.categoryID == categoryID);
+    
     return (
         <>
             <div class={`${showbg == 'Show' ? 'bg-productHome' : ""}`}>
@@ -30,12 +21,12 @@ export function Products({ className, showbg, categoryID }) {
                             <div class="d-flex">
                                 <div class="me-auto d-flex">
                                     <img className="rounded float-start" src={`./image/0${categoryID}.png`} style={{ "width": "4rem" }} alt="" />
-                                    <h2 className="col dropshadow ms-2 mt-2">{nameProduct}</h2>
+                                    <h2 className="col dropshadow ms-2 mt-2">{productByCategory[0].category.categoryName}</h2>
                                 </div>
                             </div>
 
                             <div class="d-flex">
-                                <div class="me-auto"><p class="mt-2 text-muted">We offer affordable {nameProduct}</p></div>
+                                <div class="me-auto"><p class="mt-2 text-muted">We offer affordable nameProduct</p></div>
                                 <div class="p-2">
                                     <button class="btn viewAll fs-5 dropshadow rounded-pill border" type="submit">
                                         <Link to={`/OnProducts/${categoryID}`} class="text-decoration dropdown-item">
@@ -49,7 +40,7 @@ export function Products({ className, showbg, categoryID }) {
                         {
                             products.length > 0 ? (
                                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                                    {products.slice(0, 3).map((product) => (
+                                    {productByCategory.slice(0, 3).map((product) => (
                                         <ProductCard product={product} />
                                     ))}
                                 </div>
@@ -75,6 +66,4 @@ export default styled(Products)`
     color:white;
     background: linear-gradient(to bottom, #ff8c42, #fd9c50, #fab06b, #f9d0a2, #f8e2c5);
 }
-
-
 `;
