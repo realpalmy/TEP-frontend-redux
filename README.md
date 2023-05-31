@@ -6,3 +6,5 @@
 
 <img width="1247" alt="Screenshot 2023-05-31 160326" src="https://github.com/realpalmy/TEP-frontend-redux/assets/64379250/42f5d43c-b426-4a46-b1f7-794a36abb272">
 
+<img width="1247" alt="image" src="https://github.com/realpalmy/TEP-frontend-redux/assets/64379250/51036998-a703-469f-890c-4218148b1f54">
+
