@@ -8,3 +8,4 @@
 
 <img width="1247" alt="image" src="https://github.com/realpalmy/TEP-frontend-redux/assets/64379250/51036998-a703-469f-890c-4218148b1f54">
 
+<img width="1248" alt="image" src="https://github.com/realpalmy/TEP-frontend-redux/assets/64379250/939ef870-eaea-4700-bb80-5ea794b8d610">
