@@ -18,20 +18,13 @@ import { addToken, fetchToken } from './actions/tokenAction';
 
 function App() {
 
-  const tokenState = useSelector((state) => state.token);
+  const token = useSelector((state) => state.token);
   const dispatch = useDispatch();
+  const tokenLocalStorage = JSON.parse(localStorage.getItem('token'));
 
-
-  const { token, setToken } = useToken();
-  const [tk , setTk] = useState()
   useEffect(() =>{
-    setTk(token)
-    dispatch(addToken(token));
-  },[token])
-
-  console.log(token && token[0].token)
-
-
+    dispatch(fetchToken(tokenLocalStorage));
+  },[])
 
   return (
     <Fragment>
@@ -39,14 +32,15 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-        <Route path="/LoginPages" element={tk ? <Home /> : <LoginPages setToken={setToken}/>} />
-        <Route path="/BidLoginPages/:id" element={tk ? <DetailProduct /> : <LoginPages setToken={setToken}/>} />
-        <Route path="/WatchList" element={tk ? <WatchList /> : <LoginPages setToken={setToken} />} />
-        <Route path="/OnProducts/:id" element={<OnProducts token={token}/>} /> {/*ShowProduct => ProductCard*/}
+        <Route path="/LoginPages" element={token ? <Home /> : <LoginPages/>} />
+        <Route path="/BidLoginPages/:id" element={token ? <DetailProduct /> : <LoginPages/>} />
+        <Route path="/WatchList" element={token ? <WatchList /> : <LoginPages />} />
+        <Route path="/OnProducts/:id" element={<OnProducts />} />
         <Route path="/DetailProduct/:id" element={<DetailProduct />} />
-        <Route path='/AddProduct' element={tk ? <AddProduct /> : <LoginPages setToken={setToken} />} />
-        <Route path='/BidOffers/:userid' element={tk ? <BidOffers /> : <LoginPages setToken={setToken} />} />
-        <Route path='/YourSelling/:userid' element={tk ? <YourSelling /> : <LoginPages setToken={setToken} />} />
+        <Route path='/AddProduct' element={token ? <AddProduct /> : <LoginPages />} />
+        <Route path='/BidOffers/:userid' element={token ? <BidOffers /> : <LoginPages />} />
+        <Route path='/YourSelling/:userid' element={token ? <YourSelling /> : <LoginPages />} />
+        <Route path='*' element={<Home />} />
       
       </Routes>
     </Fragment >

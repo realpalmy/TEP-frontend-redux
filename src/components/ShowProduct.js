@@ -3,30 +3,25 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
+import { fetchProductsOnPage } from "../actions/productOnPageAction";
 
-export function ShowProduct({ className, categoryID, token }) {
-    const [products, setProducts] = useState([]);
-    const tokenString = localStorage.getItem('token');
-    const userToken = JSON.parse(tokenString);    
+export function ShowProduct({ className, categoryID }) {
+    const token = useSelector((state) => state.token);
+    const urlAPI = categoryID === 'random' ? `http://localhost:8000/products/random` : 
+                        categoryID === 'onOffers' ? `http://localhost:8000/products/onbid/${token[0]?.id}` : 
+                            categoryID === 'YourSelling' ? `http://localhost:8000/products/owner/${token[0]?.id}` : `http://localhost:8000/products/category/${categoryID}`
 
-    const urlAPI = categoryID == 'random' ? `http://localhost:8000/products/random` : categoryID == 'onOffers' ? `http://localhost:8000/products/onbid/${userToken[0].id}` : categoryID == 'YourSelling' ? `http://localhost:8000/products/owner/${userToken[0].id}` : `http://localhost:8000/products/category/${categoryID}`
-
-    //randomProduct
-    //onBidProduct
-    //yourSellingProduct
-    //ownedProduct
-    //productByCategory
-
-    
+    const productOnPage = useSelector((state) => state.productOnPage)
+    const dispatch = useDispatch();
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
                 `${urlAPI}`
             );
-            setProducts(products.data);
+            dispatch(fetchProductsOnPage(products.data));
         }
         getProducts();
-    }, [categoryID]);
+    }, []);
 
     return (
         <>
@@ -34,10 +29,10 @@ export function ShowProduct({ className, categoryID, token }) {
                 <div className={className}>
                     <div className="container top">
                         {
-                            products.length > 0 ? (
+                            productOnPage.length > 0 ? (
                                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                                    {products.map((product) => (
-                                        <ProductCard product={product} token={token} />
+                                    {productOnPage.map((product) => (
+                                        <ProductCard product={product} />
                                     ))}
                                 </div>
                             ) : (

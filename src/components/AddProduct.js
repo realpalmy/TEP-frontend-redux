@@ -71,7 +71,7 @@ export default function AddProduct() {
                                     <h1 className="">Add New Product</h1>
                                 </div>
                                 <div className="mb-3">
-                                    <label for="formFileMultiple" class="form-label">Upload product image</label>
+                                    <label for="formFileMultiple" className="form-label">Upload product image</label>
                                     <input
                                         type="file"
                                         name="myImage"
@@ -82,10 +82,10 @@ export default function AddProduct() {
                                 </div>
                                 <div className="mb-3">
                                     <label for="exampleFormControlInput1" className="form-label">Product Name</label>
-                                    <input type="text" class="form-control" id="productName" required></input>
+                                    <input type="text" className="form-control" id="productName" required></input>
                                 </div>
                                 <div className="mb-3">
-                                    <select class="form-select" aria-label="Default select example" id="category" required>
+                                    <select className="form-select" aria-label="Default select example" id="category" required>
                                         <option selected>Product Category ...</option>
                                         <option value="1">VEHICLES</option>
                                         <option value="2">WATCH</option>
@@ -104,14 +104,14 @@ export default function AddProduct() {
                                 </div>
                                 <div className="mb-3">
                                     <label for="exampleFormControlInput1" className="form-label">Time</label>
-                                    <input type="date" class="form-control" id="addTime" min={today} required></input>
+                                    <input type="date" className="form-control" id="addTime" min={today} required></input>
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlTextarea1" class="form-label">Product Details</label>
-                                    <textarea class="form-control" id="productDetail" required rows="5"></textarea>
+                                    <textarea className="form-control" id="productDetail" required rows="5"></textarea>
                                 </div>
                                 <div className="d-flex justify-content-center mt-4">
-                                    <button type="submit" class="btn-add rounded-pill text-black mx-5" onClick={onClickUpload}>Submit</button>
+                                    <button type="submit" className="btn-add rounded-pill text-black mx-5" onClick={onClickUpload}>Submit</button>
                                 </div>
                             </div>
                         </div>

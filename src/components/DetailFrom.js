@@ -6,7 +6,7 @@ import moment from 'moment';
 export function DetailProduct({ className, productId }) {
     const [products, setProducts] = useState([]);
     const [user, setUser] = useState([]);
-    let [time, settime] = useState();
+    //let [time, settime] = useState();
     let [bid, setBid] = useState();
     let [key, setKey] = useState(0);
     let styledisable = `btn-lg bg-4E598C rounded-pill  text-white  px-5 me-1`;
@@ -82,7 +82,7 @@ export function DetailProduct({ className, productId }) {
     }
 
     return (
-        <div className="margin-top-25rem ">
+        <div className="margin-top-25rem">
             <div className={className} >
                 <div className="d-flex justify-content-md-center row col-12 mb-5 ">
                     <div id="card-box" className="card rounded-5 col-sm-12 col-md-10 col-lg-8" style={{ width: "55rem" }}>

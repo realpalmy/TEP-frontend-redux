@@ -7,7 +7,11 @@ export default createReducer([], {
     return action.payload;
   },
   [addToken]: (state, action) => {
-    state.push({...action.payload});
-    localStorage.setItem('token1', JSON.stringify(state));
+    localStorage.setItem('token', JSON.stringify(action.payload));
+    return action.payload
+  },
+  [deleteToken]: (state, action) => {
+    localStorage.clear();
+    return action.payload
   },
 });

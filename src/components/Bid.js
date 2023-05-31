@@ -3,14 +3,14 @@ import "./main.css";
 
 export default function bid() {
     return (
-        <header class="container-fluid masthead">
-            <div class="d-flex justify-content-center col-12 row mt-5">
-                <div id="card-box" class="card rounded-5" style={{ width: "60rem" }}>
-                    <img src="./image/01.png" class="size-img-bid" alt="..." />
+        <header className="container-fluid masthead">
+            <div className="d-flex justify-content-center col-12 row mt-5">
+                <div id="card-box" className="card rounded-5" style={{ width: "60rem" }}>
+                    <img src="./image/01.png" className="size-img-bid" alt="..." />
                 </div>
             </div>
             {/* show detail product */}
-            <div class="p-5">
+            <div className="p-5">
                 <div class="d-flex justify-content-center col-12 row ">
                     <div id="card-box" class="card rounded-5 mt-2 mx-3" style={{ width: "10rem", height: "10rem" }}>
                         <img src="./image/02.png" class="show-img-bid" alt="..." />

@@ -2,18 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import useToken from './useToken';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToken, deleteToken, fetchToken } from '../actions/tokenAction';
 
 function Navbar({ className }) {
-    //const {token, setToken} = React.useState(JSON.parse(localStorage.getItem('token')));
-    const token = JSON.parse(localStorage.getItem('token'));
-    const { token: tk, setToken } = useToken()
+    const token = useSelector((state) => state.token)
+    const dispatch = useDispatch();
 
     const x = () => {
-        localStorage.clear();
+        dispatch(deleteToken(null));
         window.location.reload();
     }
-
-    // JSON.parse(localStorage.getItem('token'));
 
     return (
         <div className='w-100'>

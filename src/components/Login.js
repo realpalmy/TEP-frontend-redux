@@ -7,7 +7,7 @@ import { addToken } from "../actions/tokenAction";
 
 async function fetchToken(userIn) {
   let response = await fetch("http://localhost:8000/login");
-  console.log(response.status); // 200
+  //console.log(response.status); // 200
 
   if (response.status === 200) {
     let users = await response.json();
@@ -17,7 +17,6 @@ async function fetchToken(userIn) {
         user.username === userIn.username &&
         user.password === userIn.password
       ) {
-        console.log(user);
         return user;
       }
     }
@@ -34,7 +33,7 @@ async function fetchToken(userIn) {
   }
 }
 
-export default function Login({ setToken }) {
+export default function Login() {
   const tokenState = useSelector((state) => state.token);
   const dispatch = useDispatch();
 
@@ -44,8 +43,6 @@ export default function Login({ setToken }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = await fetchToken({ username, password });
-    //console.log(token)
-    setToken(token);
     dispatch(addToken(token));
   };
 
@@ -138,7 +135,3 @@ export default function Login({ setToken }) {
     </div>
   );
 }
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
-};

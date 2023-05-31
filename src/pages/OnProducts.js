@@ -7,7 +7,7 @@ import HeadOnPeoduct from '../components/HeadOnPeoduct';
 import ShowProduct from '../components/ShowProduct';
 
 
-function OnProducts({ token }) {
+function OnProducts() {
     let { id } = useParams();
 
     return (
@@ -16,7 +16,7 @@ function OnProducts({ token }) {
                 <Navbar />
                 <HeadOnPeoduct />
             </ContainerNavbar>
-            <ShowProduct categoryID={`${id}`} token={token} />
+            <ShowProduct categoryID={`${id}`} />
             <Footer />
         </Fragment >
     );

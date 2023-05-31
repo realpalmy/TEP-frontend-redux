@@ -19,9 +19,9 @@ function Home() {
     useEffect(() => {
         async function getProducts() {
             const products = await axios.get(
-            `http://localhost:8000/products/`
+                `http://localhost:8000/products/`
             );
-            dispatch(fetchProducts(products.data));
+            dispatch(fetchProducts(products.data)); //`http://localhost:8000/products/`
         }
         getProducts();
     }, []);
@@ -34,6 +34,7 @@ function Home() {
                 <SectionOne />
             </ContainerNavbar>
             <Category />
+        
             { products.length ? (
                 <>
                     <Products categoryID={`${1}`} />

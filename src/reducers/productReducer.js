@@ -8,7 +8,7 @@ export default createReducer([], {
     return action.payload;
   },
   [addProduct]: (state, action) => {
-    state.push({ id: ++currentProductId, ...action.payload });
+    state.push({ ...action.payload });
   },
   
 });
